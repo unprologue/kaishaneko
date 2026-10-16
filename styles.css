@@ -2707,3 +2707,82 @@ h3 {
 .pricing-contact-btn {
   text-transform: none;
 }
+
+/* Color options */
+.colors-section {
+  background: var(--surface-deep);
+}
+
+.colors-wrap {
+  max-width: 1200px;
+}
+
+.colors-intro {
+  margin: 0 0 clamp(1.4rem, 3vw, 2rem);
+  text-align: center;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.color-swatches {
+  margin: 0 auto clamp(1.6rem, 3.5vw, 2.4rem);
+  padding: 0;
+  list-style: none;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(0.6rem, 2vw, 1.4rem);
+}
+
+.color-swatch {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.color-swatch-chip {
+  width: clamp(3rem, 7vw, 4.6rem);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0) 38%),
+    var(--swatch);
+  box-shadow: 0 6px 14px rgba(31, 25, 17, 0.18), inset 0 -3px 6px rgba(0, 0, 0, 0.18);
+}
+
+.color-swatch-en {
+  margin-top: 0.3rem;
+  font-family: var(--latin-font);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #3a3732;
+}
+
+.color-swatch-ja {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.colors-image-wrap .size-chart-image,
+#size-chart .size-chart-image {
+  width: min(560px, 100%);
+}
+
+.pricing-color-link {
+  display: inline-block;
+  margin-top: 0.3rem;
+  color: #8b7c62;
+  font-size: 0.88rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 640px) {
+  .color-swatches {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1.2rem;
+  }
+}
