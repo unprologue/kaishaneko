@@ -2589,3 +2589,200 @@ h3 {
     height: 1.55rem;
   }
 }
+
+/* Flow step descriptions */
+.process-card-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Per-size price list in pricing chart */
+.pricing-price-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.pricing-price-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 22rem;
+}
+
+/* Contact button below pricing */
+.pricing-contact {
+  margin-top: clamp(1.4rem, 3vw, 2rem);
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 14rem;
+  padding: 0.95rem 2rem;
+  border: 1px solid rgba(199, 169, 112, 0.48);
+  border-radius: 0.48rem;
+  background: #1f1d19;
+  color: #d7c59c;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  box-shadow: 0 9px 20px rgba(31, 25, 17, 0.24);
+  transition: transform 260ms ease, color 260ms ease, background 260ms ease;
+}
+
+.pricing-contact-btn:hover {
+  color: #f1dfb7;
+  background: #171511;
+  transform: translateY(-1px);
+}
+
+/* Size table (text version of size chart) */
+.size-table {
+  width: min(760px, 100%);
+  margin: clamp(1.4rem, 3vw, 2rem) auto 0;
+  border-collapse: collapse;
+  background: var(--surface);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: #3a3732;
+}
+
+.size-table th,
+.size-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(134, 120, 95, 0.2);
+  text-align: center;
+}
+
+.size-table thead th {
+  background: rgba(228, 223, 216, 0.72);
+  font-weight: 600;
+}
+
+.size-table tbody th {
+  font-family: var(--latin-font);
+  font-weight: 600;
+}
+
+.size-table-tag {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.45rem;
+  border: 1px solid rgba(134, 120, 95, 0.45);
+  border-radius: 0.3rem;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", Georgia, serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #8b7c62;
+  vertical-align: middle;
+}
+
+@media (max-width: 640px) {
+  .size-table th,
+  .size-table td {
+    padding: 0.7rem 0.5rem;
+    font-size: 0.88rem;
+  }
+
+  .size-table-tag {
+    display: block;
+    margin: 0.3rem auto 0;
+    width: fit-content;
+  }
+}
+
+.process-card-desc,
+.pricing-price-list,
+.size-table,
+.pricing-contact-btn {
+  text-transform: none;
+}
+
+/* Color options */
+.colors-section {
+  background: var(--surface-deep);
+}
+
+.colors-wrap {
+  max-width: 1200px;
+}
+
+.colors-intro {
+  margin: 0 0 clamp(1.4rem, 3vw, 2rem);
+  text-align: center;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.color-swatches {
+  margin: 0 auto clamp(1.6rem, 3.5vw, 2.4rem);
+  padding: 0;
+  list-style: none;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(0.6rem, 2vw, 1.4rem);
+}
+
+.color-swatch {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.color-swatch-chip {
+  width: clamp(3rem, 7vw, 4.6rem);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0) 38%),
+    var(--swatch);
+  box-shadow: 0 6px 14px rgba(31, 25, 17, 0.18), inset 0 -3px 6px rgba(0, 0, 0, 0.18);
+}
+
+.color-swatch-en {
+  margin-top: 0.3rem;
+  font-family: var(--latin-font);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #3a3732;
+}
+
+.color-swatch-ja {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.colors-image-wrap .size-chart-image,
+#size-chart .size-chart-image {
+  width: min(560px, 100%);
+}
+
+.pricing-color-link {
+  display: inline-block;
+  margin-top: 0.3rem;
+  color: #8b7c62;
+  font-size: 0.88rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 640px) {
+  .color-swatches {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1.2rem;
+  }
+}
