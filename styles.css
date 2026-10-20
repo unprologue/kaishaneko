@@ -2766,9 +2766,14 @@ h3 {
   color: var(--muted);
 }
 
-.colors-image-wrap .size-chart-image,
 #size-chart .size-chart-image {
   width: min(560px, 100%);
+}
+
+.colors-image-wrap .size-chart-image {
+  width: min(980px, 100%);
+  border: 0;
+  background: transparent;
 }
 
 .pricing-color-link {
