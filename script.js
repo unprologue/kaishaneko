@@ -46,23 +46,8 @@ if (hero && heroImage) {
 
 const revealTargets = [
   ".hero-copy",
-  ".collections-editorial",
-  ".concept-sheet-section",
-  ".experience-wrap",
-  ".experience-feature",
-  ".size-wrap",
-  ".origin-grid",
-  ".faq-wrap",
-  ".care-note-wrap",
-  ".site-footer",
   ".hero-copy > *",
-  ".collections-item",
-  ".process-columns > .process-card",
-  ".pricing-chart-row",
-  ".faq-item",
-  ".origin-copy > *",
-  ".origin-map-wrap",
-  ".care-note-wrap > *",
+  ".sec-wrap",
 ].flatMap((selector) => Array.from(document.querySelectorAll(selector)));
 
 const uniqueRevealTargets = Array.from(new Set(revealTargets));
@@ -75,13 +60,6 @@ const applyStagger = (selector, stepMs) => {
 };
 
 applyStagger(".hero-copy > *", 110);
-applyStagger(".collections-item", 90);
-applyStagger(".process-columns > .process-card", 95);
-applyStagger(".experience-feature", 85);
-applyStagger(".pricing-chart-row", 70);
-applyStagger(".faq-item", 90);
-applyStagger(".origin-copy > *", 85);
-applyStagger(".care-note-wrap > *", 120);
 
 if (uniqueRevealTargets.length > 0) {
   uniqueRevealTargets.forEach((el) => {
@@ -108,4 +86,18 @@ if (uniqueRevealTargets.length > 0) {
   } else {
     uniqueRevealTargets.forEach((el) => el.classList.add("is-visible"));
   }
+}
+
+// Back-to-top button after scrolling; mobile order bar once the hero is out of view.
+const heroSection = document.querySelector(".hero");
+const updateScrollState = () => {
+  document.body.classList.toggle("is-scrolled", window.scrollY > 600);
+};
+updateScrollState();
+window.addEventListener("scroll", updateScrollState, { passive: true });
+
+if (heroSection && "IntersectionObserver" in window) {
+  new IntersectionObserver(([entry]) => {
+    document.body.classList.toggle("is-past-hero", !entry.isIntersecting);
+  }).observe(heroSection);
 }
