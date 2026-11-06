@@ -3787,50 +3787,30 @@ body.is-scrolled .to-top {
   letter-spacing: 0.06em;
 }
 
-.finish-steps {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.logo-guide {
+  margin: 0 auto;
+  width: min(600px, 100%);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(0.8rem, 2vw, 1.1rem);
+  gap: 0.6rem;
 }
 
-.finish-steps li {
-  display: grid;
-  align-content: start;
-  gap: 0.3rem;
-  padding: 1rem 1.1rem 1.2rem;
-  border: 1px solid var(--line);
+.logo-guide a {
+  display: block;
   border-radius: 0.6rem;
-  background: var(--surface);
+  overflow: hidden;
+  box-shadow: 0 16px 38px rgba(46, 45, 42, 0.12);
 }
 
-.finish-step-num {
-  font-family: var(--latin-font);
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #7a7369;
-  line-height: 1.1;
+.logo-guide img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.finish-steps b {
-  font-size: 1rem;
-  color: #24211d;
-}
-
-.finish-steps p {
-  font-size: 0.85rem;
-  line-height: 1.75;
-}
-
-.finish-caution {
-  padding: 0.8rem 1.1rem;
-  border-radius: 0.5rem;
-  background: var(--surface-deep);
-  font-size: 0.85rem;
-  line-height: 1.8;
-  color: #4f4b45;
+.logo-guide figcaption {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
 /* Choose */
@@ -3958,18 +3938,13 @@ body.is-scrolled .to-top {
 }
 
 @media (max-width: 900px) {
-  .finish-steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .flow-grid-5 {
     grid-template-columns: minmax(0, 1fr);
   }
 }
 
 @media (max-width: 700px) {
-  .choose-grid,
-  .finish-steps {
+  .choose-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
