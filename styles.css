@@ -3678,3 +3678,312 @@ body.is-scrolled .to-top {
     display: none;
   }
 }
+
+/* ==========================================================
+   2026-11 wireframe update 2: finishing options / OK before production
+   ========================================================== */
+.finish-picker {
+  margin-top: 1.2rem;
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: rgba(252, 252, 251, 0.85);
+}
+
+.hero-copy .finish-picker-title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #24211d;
+}
+
+.finish-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.finish-picker-item {
+  display: grid;
+  gap: 0.1rem;
+  min-height: 44px;
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid #24211d;
+  border-radius: 0.45rem;
+  background: #fff;
+  color: #24211d;
+  transition: background 200ms ease;
+}
+
+.finish-picker-item:hover {
+  background: var(--surface-deep);
+}
+
+.finish-picker-item b {
+  font-size: 0.95rem;
+}
+
+.finish-picker-item span {
+  font-size: 0.75rem;
+  color: #4f4b45;
+}
+
+.finish-picker-item .finish-picker-tag {
+  font-weight: 600;
+  color: #24211d;
+}
+
+.hero-actions {
+  margin-top: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.hero-actions .btn {
+  min-width: 11rem;
+}
+
+/* About callout */
+.callout {
+  width: min(44rem, 100%);
+  margin-inline: auto;
+  display: grid;
+  gap: 0.5rem;
+  padding: clamp(1.1rem, 3vw, 1.6rem) clamp(1.2rem, 3vw, 1.8rem);
+  border: 1.5px solid #24211d;
+  border-radius: 0.6rem;
+  background: var(--surface);
+  font-size: 0.92rem;
+  line-height: 1.9;
+}
+
+.callout-title {
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #24211d;
+}
+
+/* Finish */
+.finish-alt {
+  margin-top: -0.8rem;
+}
+
+.finish-alt a,
+.gift-note a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.finish-steps-title {
+  margin: 0.4rem 0 -0.6rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.finish-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.8rem, 2vw, 1.1rem);
+}
+
+.finish-steps li {
+  display: grid;
+  align-content: start;
+  gap: 0.3rem;
+  padding: 1rem 1.1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: var(--surface);
+}
+
+.finish-step-num {
+  font-family: var(--latin-font);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #7a7369;
+  line-height: 1.1;
+}
+
+.finish-steps b {
+  font-size: 1rem;
+  color: #24211d;
+}
+
+.finish-steps p {
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+
+.finish-caution {
+  padding: 0.8rem 1.1rem;
+  border-radius: 0.5rem;
+  background: var(--surface-deep);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: #4f4b45;
+}
+
+/* Choose */
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.4vw, 1.6rem);
+}
+
+.choose-card {
+  display: grid;
+  align-content: start;
+  gap: 0.7rem;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  border: 1.5px solid #24211d;
+  border-radius: 0.8rem;
+  background: var(--surface);
+  min-width: 0;
+}
+
+.choose-card.is-default {
+  border-width: 3px;
+}
+
+.choose-tag {
+  justify-self: start;
+  padding: 0.15rem 0.7rem;
+  border: 1.5px solid #24211d;
+  border-radius: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #24211d;
+}
+
+.choose-card.is-default .choose-tag {
+  background: #24211d;
+  color: #f6efe2;
+}
+
+.choose-card h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.choose-card img {
+  width: min(100%, 340px);
+  height: auto;
+  justify-self: center;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  display: block;
+}
+
+.choose-card p {
+  font-size: 0.9rem;
+  line-height: 1.85;
+}
+
+.choose-card .choose-for {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* Case gift note */
+.gift-note {
+  width: min(44rem, 100%);
+  margin-inline: auto;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  font-size: 0.9rem;
+  line-height: 1.85;
+  text-align: center;
+}
+
+/* Flow: 5 steps */
+.flow-grid-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.flow-grid-5 .flow-num {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.flow-card.is-key {
+  border: 2px solid #24211d;
+  background: #fff;
+}
+
+/* Pricing: finishing options list */
+.plan-list-wide > div {
+  grid-template-columns: 12rem minmax(0, 1fr);
+}
+
+.plan-list-wide dt {
+  color: #24211d;
+  font-weight: 600;
+}
+
+/* Producer photo */
+.producer-photo {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  object-fit: cover;
+  justify-self: center;
+  margin-bottom: 0.6rem;
+}
+
+.producer-card .producer-role,
+.producer-card .producer-name {
+  justify-self: center;
+  text-align: center;
+}
+
+@media (max-width: 1080px) {
+  .flow-grid-5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .finish-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .flow-grid-5 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .choose-grid,
+  .finish-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .plan-list-wide > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .finish-picker-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
