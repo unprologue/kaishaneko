@@ -102,15 +102,17 @@ if (heroSection && "IntersectionObserver" in window) {
   }).observe(heroSection);
 }
 
-// On phones, show "仕上げは、みんなの手で。" exactly as on a 1440px PC, scaled to the screen width.
-const finishSection = document.getElementById("finish");
-const FINISH_PC_WIDTH = 1440;
-const fitFinishSection = () => {
-  if (!finishSection) return;
+// Sections with data-pc-scale="<max width>" show the 1440px PC layout scaled to the screen
+// width at or below that width ("仕上げは、みんなの手で。" and "選べる6色・4サイズ").
+const PC_LAYOUT_WIDTH = 1440;
+const pcScaledSections = Array.from(document.querySelectorAll("[data-pc-scale]"));
+const fitPcScaledSections = () => {
   const viewportWidth = document.documentElement.clientWidth;
-  const scaled = viewportWidth <= 700;
-  finishSection.classList.toggle("is-pc-scaled", scaled);
-  finishSection.style.zoom = scaled ? String(viewportWidth / FINISH_PC_WIDTH) : "";
+  pcScaledSections.forEach((section) => {
+    const scaled = viewportWidth <= Number(section.dataset.pcScale);
+    section.classList.toggle("is-pc-scaled", scaled);
+    section.style.zoom = scaled ? String(viewportWidth / PC_LAYOUT_WIDTH) : "";
+  });
 };
-fitFinishSection();
-window.addEventListener("resize", fitFinishSection);
+fitPcScaledSections();
+window.addEventListener("resize", fitPcScaledSections);
