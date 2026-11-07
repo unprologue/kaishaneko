@@ -1611,11 +1611,11 @@ h3 {
   font-size: 0.98rem;
 }
 
-.faq-answer span {
+.faq-answer > span {
   display: block;
 }
 
-.faq-answer span + span {
+.faq-answer > span + span {
   margin-top: 0.3rem;
 }
 
@@ -2349,7 +2349,7 @@ h3 {
     padding: 0.9rem 1.15rem 1.2rem;
   }
 
-  .faq-answer span {
+  .faq-answer > span {
     overflow-wrap: anywhere;
   }
 
@@ -3694,10 +3694,6 @@ body.is-scrolled .to-top {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .sec-lead br {
-    display: none;
-  }
-
   .plan-list > div {
     grid-template-columns: minmax(0, 1fr);
     gap: 0.2rem;
@@ -4229,7 +4225,7 @@ body.is-scrolled .to-top {
   width: 1440px;
 }
 
-#finish.is-pc-scaled .sec-lead br {
+#finish.is-pc-scaled .br-pc {
   display: inline;
 }
 
@@ -4241,4 +4237,39 @@ body.is-scrolled .to-top {
 
 #finish.is-pc-scaled .container {
   width: 1160px;
+}
+
+/* Japanese line breaking */
+.sentence {
+  display: inline-block;
+}
+
+.sentence,
+.phrase {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+h2,
+h3,
+h4,
+.callout-title,
+.gallery-cta-title,
+.choose-for,
+.faq-item summary {
+  text-wrap: balance;
+}
+
+.btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .br-pc {
+    display: none;
+  }
 }
