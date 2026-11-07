@@ -4499,3 +4499,264 @@ h4,
     display: none;
   }
 }
+
+/* ==========================================================
+   Payment methods
+   ========================================================== */
+/* Hero: trust pills under the CTA */
+.trust-pills {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(252, 252, 251, 0.72);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: #2e2d2a;
+  white-space: nowrap;
+  text-transform: none;
+}
+
+.trust-pill::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #24211d;
+}
+
+a.trust-pill {
+  border-color: #24211d;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+a.trust-pill:hover {
+  background: #fff;
+}
+
+/* Pricing: payment block (wider than the pricing column so four cards fit on PC) */
+.payment {
+  --payment-w: min(1160px, 94vw);
+  justify-self: start;
+  width: var(--payment-w);
+  margin-inline: calc((100% - var(--payment-w)) / 2);
+  display: grid;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.payment-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+.payment-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.payment-lead {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4f4b45;
+}
+
+.payment-lead strong {
+  font-weight: 700;
+  color: #24211d;
+}
+
+.payment-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.pay-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  min-width: 0;
+}
+
+.pay-card.is-featured {
+  border: 2px solid #24211d;
+  padding: 19px;
+}
+
+.pay-tag {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  padding: 5px 10px;
+  border-radius: 0 10px 0 8px;
+  background: #24211d;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.pay-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #eee;
+  font-family: var(--latin-font);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #4f4b45;
+  white-space: nowrap;
+}
+
+.pay-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #24211d;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.pay-brands {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pay-brands li {
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-family: var(--latin-font);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  color: #2e2d2a;
+  white-space: nowrap;
+}
+
+.pay-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #4f4b45;
+}
+
+.payment-notes {
+  display: grid;
+  gap: 2px;
+}
+
+.payment-notes p,
+.payment-cta-note {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.payment-cta-note {
+  margin-top: -8px;
+  text-align: center;
+}
+
+/* Order flow: payment notes */
+.flow-pay {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #8f3f37;
+}
+
+.flow-note {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+@media (max-width: 1024px) {
+  .payment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  /* the hero copy is centered at this width */
+  .trust-pills {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .payment {
+    --payment-w: 100%;
+  }
+
+  .payment-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .payment-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Phones: invoice → bank transfer → credit card → mobile pay */
+  .pay-card-invoice {
+    order: 1;
+  }
+
+  .pay-card-bank {
+    order: 2;
+  }
+
+  .pay-card-credit {
+    order: 3;
+  }
+
+  .pay-card-mobile {
+    order: 4;
+  }
+}

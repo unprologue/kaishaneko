@@ -102,6 +102,12 @@
               >
               <a class="btn btn-outline" href="#finish">仕上げ方を見る</a>
             </div>
+            <ul class="trust-pills" aria-label="ご注文について">
+              <li><a class="trust-pill" href="#payment">請求書払い・銀行振込OK</a></li>
+              <li><span class="trust-pill">クレジットカード各種</span></li>
+              <li><span class="trust-pill">国内送料無料</span></li>
+              <li><span class="trust-pill">法人・個人どちらも</span></li>
+            </ul>
           </div>
           <div class="hero-visual" aria-hidden="true">
             <img
@@ -550,8 +556,9 @@
           <ol class="flow-grid flow-grid-5">
             <li class="flow-card">
               <span class="flow-num">STEP 01</span>
-              <h3>ご注文・仕上げ方法を選ぶ</h3>
+              <h3 class="phrase">ご注文・<wbr>仕上げ方法を<wbr>選ぶ</h3>
               <p class="phrase">ご注文時に<wbr>「自分たちで<wbr>貼る<wbr>（定番）」か<wbr>「貼り付け済み<span class="nowrap">」を</span><wbr>お選びいただきます。</p>
+              <p class="flow-pay phrase">お支払いは<wbr>カード・<wbr>銀行振込・<wbr>請求書払いから<wbr>選べます。</p>
             </li>
             <li class="flow-card">
               <span class="flow-num">STEP 02</span>
@@ -565,13 +572,15 @@
             </li>
             <li class="flow-card is-key">
               <span class="flow-num">STEP 04</span>
-              <h3>「OK<span class="nowrap">」の</span>お返事で制作開始</h3>
+              <h3 class="phrase">「OK<span class="nowrap">」の</span><wbr>お返事で<wbr>制作開始</h3>
               <p class="phrase">デザイン案に<wbr>「OK<span class="nowrap">」の</span><wbr>お返事を<wbr>いただいてから、<wbr>職人が<wbr>制作を<wbr>始めます。</p>
+              <p class="flow-note phrase">※銀行振込の<wbr>場合は<wbr>ご入金確認後に<wbr>開始</p>
             </li>
             <li class="flow-card">
               <span class="flow-num">STEP 05</span>
               <h3>お届け・仕上げ</h3>
               <p class="phrase">立札付きで<wbr>お届け。<wbr>「自分たちで<wbr>貼る<span class="nowrap">」は</span><wbr><span class="nowrap">ロゴシール</span>と<wbr>説明書を<wbr>同梱、<wbr>願いを<wbr>込めて<wbr>貼って<wbr>完成です。<wbr>「貼り付け済み<span class="nowrap">」は</span><wbr>ロゴを<wbr>貼った<wbr>状態で<wbr>届くので、<wbr>すぐに<wbr>飾れます。</p>
+              <p class="flow-note phrase">※請求書払いは<wbr>納品後に<wbr>請求書を<wbr>発行</p>
             </li>
           </ol>
           <p class="sec-note sec-note-left">
@@ -647,6 +656,48 @@
             <div><dt>海外発送・お急ぎ便</dt><dd class="phrase">海外発送の<wbr>送料は<wbr>別途お見積もり。<wbr>お急ぎの<wbr>場合は<wbr>お問い合わせ<wbr>ください。</dd></div>
           </dl>
 
+          <section id="payment" class="payment" aria-labelledby="payment-title">
+            <div class="payment-head">
+              <h3 id="payment-title" class="payment-title">お支払い方法</h3>
+              <p class="payment-lead phrase">クレジットカードの<wbr>ほか、<wbr><strong>銀行振込・<wbr>請求書払い</strong>にも<wbr>対応しています。</p>
+            </div>
+            <ul class="payment-grid">
+              <li class="pay-card pay-card-credit">
+                <span class="pay-chip">CREDIT CARD</span>
+                <h4 class="pay-title">クレジットカード</h4>
+                <ul class="pay-brands" aria-label="利用できるカードブランド">
+                  <li>Visa</li>
+                  <li>Mastercard</li>
+                  <li>JCB</li>
+                  <li><span class="nowrap">American Express</span></li>
+                </ul>
+                <p class="pay-text phrase">Visa／<wbr>Mastercard／<wbr>JCB／<wbr><span class="nowrap">American Express</span> ほか。<wbr>ご注文時に<wbr>決済が<wbr>完了します。</p>
+              </li>
+              <!-- [Shopify Paymentsで有効にしているものだけ表示] -->
+              <li class="pay-card pay-card-mobile">
+                <span class="pay-chip">MOBILE PAY</span>
+                <h4 class="pay-title">スマホ・<wbr>オンライン決済</h4>
+                <p class="pay-text phrase"><span class="nowrap">Shop Pay</span>／<wbr><span class="nowrap">Apple Pay</span>／<wbr><span class="nowrap">Google Pay</span></p>
+              </li>
+              <li class="pay-card pay-card-bank is-featured">
+                <span class="pay-tag">法人のお客様に</span>
+                <span class="pay-chip">BANK TRANSFER</span>
+                <h4 class="pay-title">銀行振込</h4>
+                <p class="pay-text phrase">ご注文後に<wbr>振込先を<wbr>ご案内。<wbr>ご入金確認後に<wbr>制作を<wbr>開始します。<wbr>振込手数料は<wbr><span class="nowrap">[お客様負担]。</span></p>
+              </li>
+              <li class="pay-card pay-card-invoice is-featured">
+                <span class="pay-tag">法人のお客様に</span>
+                <span class="pay-chip">INVOICE</span>
+                <h4 class="pay-title">請求書払い<wbr>（後払い）</h4>
+                <p class="pay-text phrase">法人・<wbr>個人事業主の<wbr>お客様向け。<wbr>納品後に<wbr>請求書を<wbr>発行し、<wbr><span class="nowrap">[翌月末]</span>までに<wbr>お振込み<wbr>いただけます。<wbr>稟議・<wbr>経費処理にも<wbr>安心です。</p>
+              </li>
+            </ul>
+            <div class="payment-notes">
+              <p class="phrase">※請求書払いは<wbr><span class="nowrap">[与信審査／ご利用上限額]</span>が<wbr>あります。<wbr>詳しくは<wbr>ご注文時に<wbr>ご確認ください。</p>
+              <p class="phrase">※領収書・<wbr>見積書・<wbr>納品書の<wbr>発行にも<wbr>対応しています。</p>
+            </div>
+          </section>
+
           <div class="sec-actions">
             <a
               class="btn btn-primary"
@@ -657,6 +708,7 @@
             >
             <a class="btn btn-outline" href="mailto:hello@unprologue.jp">お問い合わせ</a>
           </div>
+          <p class="payment-cta-note phrase">請求書払い・<wbr>銀行振込にも<wbr>対応／<wbr>国内送料無料／<wbr>納期は<wbr>ご注文から<wbr>2ヶ月以内</p>
           <p class="contact-note phrase">
             会社猫に<wbr>関する<wbr>ご注文・<wbr>お問い合わせは、<wbr>運営会社 <span class="nowrap">UNPROLOGUE株式会社</span><wbr>（<span class="nowrap">hello@unprologue.jp</span>）が<wbr>承ります。<wbr>製作元の<wbr>宮創製陶所では<wbr>受け付けて<wbr>おりませんので、<wbr>ご了承ください。
           </p>
@@ -797,6 +849,24 @@
               </summary>
               <div class="faq-answer">
                 <span class="phrase">A. ご注文から<wbr>2ヶ月以内に<wbr>お届けします。<wbr>デザインの<wbr>ご確認・<wbr>「OK<span class="nowrap">」の</span><wbr>お返事が<wbr>早い<wbr>ほど、<wbr>早く<wbr>お届けできます。<wbr>お祝いの<wbr>日の<wbr>2ヶ月前までの<wbr>ご注文が<wbr>おすすめです。</span>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="phrase">
+                Q. 支払い方法は<wbr>何が<wbr>ありますか？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <span class="phrase">A. クレジットカード<wbr>（Visa／<wbr>Mastercard／<wbr>JCB／<wbr><span class="nowrap">American Express</span>）、<wbr><span class="nowrap">Shop Pay</span>・<wbr><span class="nowrap">Apple Pay</span>・<wbr><span class="nowrap">Google Pay</span>、<wbr>銀行振込、<wbr>請求書払い<wbr>（後払い）から<wbr>お選びいただけます。</span>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="phrase">
+                Q. 請求書払い<wbr>（後払い）は<wbr>できますか？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <span class="phrase">A. はい、<wbr>法人・<wbr>個人事業主の<wbr>お客様は<wbr>ご利用いただけます。<wbr>ご注文時に<wbr>「請求書払い<span class="nowrap">」を</span><wbr>お選びください。<wbr>納品後に<wbr>請求書を<wbr>発行し、<wbr><span class="nowrap">[翌月末]</span>までに<wbr>お振込み<wbr>いただきます。<wbr><span class="nowrap">[与信審査／ご利用上限額]</span>が<wbr>ある<wbr>場合が<wbr>ございます。<wbr>見積書・<wbr>納品書・<wbr>領収書の<wbr>発行も<wbr>承ります。</span>
               </div>
             </details>
             <details class="faq-item">
