@@ -3481,6 +3481,7 @@ h3 {
 }
 
 .size-item {
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3489,8 +3490,9 @@ h3 {
 }
 
 .size-stage {
+  --stage-h: min(var(--stage), 150cqw);
   width: 100%;
-  height: var(--stage);
+  height: var(--stage-h);
   margin-bottom: 8px;
   display: flex;
   align-items: flex-end;
@@ -3502,7 +3504,7 @@ h3 {
   display: block;
   width: auto;
   max-width: 100%;
-  height: calc(var(--stage) * var(--size) / 30);
+  height: calc(var(--stage-h) * var(--size) / 30);
 }
 
 .size-name {
@@ -4496,3 +4498,212 @@ h4,
     display: none;
   }
 }
+
+/* ==========================================================
+   Compact layout: more side by side on PC, swipe rows on phones
+   ========================================================== */
+/* 6 colors and 4 sizes side by side */
+.variation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 48px;
+}
+
+.variation-col .color-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.variation-col .color-card {
+  gap: 12px;
+  padding: 16px 12px 12px;
+}
+
+.variation-col .color-card img {
+  width: min(100%, 96px);
+}
+
+.variation-col .size-lineup {
+  --stage: 220px;
+  width: 100%;
+  gap: 16px;
+}
+
+/* Finishing: lead text beside the illustration (also used by the scaled phone view) */
+.finish-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.finish-intro-text {
+  display: grid;
+  gap: 16px;
+}
+
+.finish-intro .sec-lead {
+  margin: 0;
+  text-align: left;
+}
+
+.finish-intro .experience-photo {
+  width: 100%;
+}
+
+/* Pricing: table beside the plan lists */
+.pricing-cols,
+.pricing-col,
+.producer-cols {
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.2rem);
+  min-width: 0;
+}
+
+.pricing-col {
+  align-content: start;
+}
+
+@media (min-width: 1025px) {
+  .pricing-cols,
+  .producer-cols {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    column-gap: 48px;
+  }
+
+  /* Finishing option cards: photo on the left, text on the right */
+  .choose-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "photo tag"
+      "photo title"
+      "photo body"
+      "photo for";
+    column-gap: 24px;
+    row-gap: 16px;
+  }
+
+  .choose-tag {
+    grid-area: tag;
+    justify-self: start;
+  }
+
+  .choose-card h3 {
+    grid-area: title;
+  }
+
+  .choose-photo {
+    grid-area: photo;
+    align-self: start;
+  }
+
+  .choose-body {
+    grid-area: body;
+  }
+
+  .choose-for {
+    grid-area: for;
+  }
+
+  /* FAQ in two columns */
+  #faq .faq-accordion {
+    display: block;
+    columns: 2;
+    column-gap: 24px;
+  }
+
+  #faq .faq-item {
+    break-inside: avoid;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .variation-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(3.6rem, 8vw, 6rem);
+  }
+}
+
+/* Phones: card lists become horizontal swipe rows */
+@media (max-width: 767px) {
+  .delivery-steps,
+  .choose-grid,
+  .case-grid,
+  .flow-grid,
+  .price-points,
+  .color-grid,
+  .variation-col .color-grid,
+  .size-lineup,
+  .variation-col .size-lineup {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    grid-auto-columns: var(--sp-col, 80%);
+    width: auto;
+    margin-inline: calc(50% - 50vw);
+    padding: 0 calc(50vw - 50%) 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  .delivery-steps > *,
+  .choose-grid > *,
+  .case-grid > *,
+  .flow-grid > *,
+  .price-points > *,
+  .color-grid > *,
+  .size-lineup > * {
+    scroll-snap-align: center;
+  }
+
+  .delivery-steps {
+    --sp-col: 78%;
+  }
+
+  .choose-grid {
+    --sp-col: 86%;
+    gap: 16px;
+  }
+
+  .case-grid {
+    --sp-col: 44%;
+  }
+
+  .flow-grid {
+    --sp-col: 72%;
+  }
+
+  .price-points {
+    --sp-col: 64%;
+  }
+
+  .color-grid,
+  .variation-col .color-grid {
+    --sp-col: 30%;
+    gap: 8px;
+  }
+
+  .size-lineup,
+  .variation-col .size-lineup {
+    --sp-col: 38%;
+    --stage: 180px;
+    gap: 16px;
+  }
+
+  /* delivery arrows point sideways again in the swipe row */
+  .delivery-step:not(:last-child)::after {
+    display: none;
+  }
+
+  .delivery-step:not(:last-child) .delivery-photo::after {
+    display: grid;
+  }
+}
+
