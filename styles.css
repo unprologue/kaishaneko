@@ -4199,53 +4199,35 @@ body.is-scrolled .to-top {
 }
 
 /* Choose */
+/* Finishing options. data-layout="stacked" (default): one card per row, photo and
+   text side by side from 1024px, alternating sides. data-layout="side-by-side":
+   two cards per row, photo on top. Phones: photo on top, text below. */
 .choose-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: stretch;
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
+  width: min(1160px, 100%);
+  margin-inline: auto;
 }
 
 .choose-card {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 24px;
+  gap: 24px;
+  padding: 32px;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: var(--surface);
-  box-shadow: 0 8px 24px rgba(46, 45, 42, 0.05);
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(46, 45, 42, 0.04);
   min-width: 0;
 }
 
-/* Same shape for both badges; only the recommended one is filled */
-.choose-tag {
-  align-self: flex-start;
-  padding: 4px 12px;
-  border: 1px solid #24211d;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  line-height: 1.5;
-  color: #24211d;
-}
-
-.choose-card.is-default .choose-tag {
-  background: #24211d;
-  color: #f6efe2;
-}
-
-.choose-card h3 {
-  margin: 0;
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-
 .choose-photo {
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: min(340px, 33vh);
   margin: 0;
-  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 12px;
   background: var(--surface-deep);
@@ -4256,6 +4238,7 @@ body.is-scrolled .to-top {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: var(--photo-pos, 50% 50%);
   transition: transform 0.3s ease;
 }
 
@@ -4263,11 +4246,40 @@ body.is-scrolled .to-top {
   transform: scale(1.02);
 }
 
-.choose-body {
+.choose-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+}
+
+/* Same shape for both badges; only the recommended one is filled */
+.choose-tag {
+  padding: 4px 12px;
+  border: 1px solid #24211d;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  color: #24211d;
+  white-space: nowrap;
+}
+
+.choose-card.is-default .choose-tag {
+  background: #24211d;
+  color: #f6efe2;
+}
+
+.choose-card h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.2vw, 1.7rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  color: #24211d;
 }
 
 .choose-catch {
@@ -4277,15 +4289,23 @@ body.is-scrolled .to-top {
 }
 
 .choose-catch-main {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
   letter-spacing: 0.06em;
   color: #2e2d2a;
 }
 
 .choose-catch-sub {
-  font-size: 0.85rem;
+  font-size: 15px;
   letter-spacing: 0.04em;
   color: var(--muted);
+}
+
+.choose-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #4f4b45;
 }
 
 .choose-wishes {
@@ -4302,45 +4322,44 @@ body.is-scrolled .to-top {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--bg);
-  font-size: 0.8rem;
+  font-size: 12px;
   letter-spacing: 0.04em;
   line-height: 1.5;
   color: #4f4b45;
-}
-
-.choose-text {
-  margin: 0;
-  font-size: 0.85rem;
-  line-height: 1.75;
+  white-space: nowrap;
 }
 
 .choose-for {
+  align-self: stretch;
   display: grid;
-  gap: 8px;
-  padding-top: 16px;
+  gap: 6px;
+  margin-top: 2px;
+  padding-top: 14px;
   border-top: 1px solid var(--line);
 }
 
 .choose-for-label {
   margin: 0;
-  font-size: 0.74rem;
+  font-size: 12px;
   letter-spacing: 0.18em;
-  color: #9a8d76;
+  color: #7a7369;
 }
 
 .choose-for-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
 }
 
 .choose-for-list li {
   position: relative;
   padding-left: 1.4em;
-  font-size: 0.85rem;
+  font-size: 13px;
   line-height: 1.75;
+  color: var(--muted);
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
@@ -4349,7 +4368,7 @@ body.is-scrolled .to-top {
   content: "";
   position: absolute;
   left: 0.2em;
-  top: 0.55em;
+  top: 0.5em;
   width: 0.45em;
   height: 0.75em;
   border: solid #9a8d76;
@@ -4357,10 +4376,43 @@ body.is-scrolled .to-top {
   transform: rotate(45deg);
 }
 
+@media (min-width: 1024px) {
+  .choose-grid[data-layout="stacked"] .choose-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .choose-grid[data-layout="stacked"] .choose-card:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .choose-grid[data-layout="stacked"] .choose-photo {
+    width: 42%;
+  }
+
+  .choose-grid[data-layout="side-by-side"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 767px) {
   .choose-grid {
-    grid-template-columns: minmax(0, 1fr);
     gap: 16px;
+  }
+
+  .choose-card {
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .choose-photo {
+    aspect-ratio: 16 / 9;
+  }
+
+  .choose-photo img {
+    object-position: var(--photo-pos-sp, var(--photo-pos, 50% 50%));
   }
 }
 
