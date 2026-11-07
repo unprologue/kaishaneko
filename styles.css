@@ -5556,3 +5556,54 @@ a.trust-pill:hover {
 .urgent-contact {
   margin-top: calc(4px - clamp(1.4rem, 3vw, 2.2rem));
 }
+
+/* Hero: one-line link to the finishing options, and one-line trust note */
+.hero-finish-link {
+  align-self: flex-start;
+  margin-top: 4px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #2e2d2a;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-transform: none;
+}
+
+.hero-trust {
+  margin: 12px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #4f4b45;
+  text-transform: none;
+}
+
+.hero-trust a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 700px) {
+  .hero-finish-link {
+    align-self: center;
+  }
+}
+
+/* Order flow: delivered-photo thumbnail keeps the cat, not the old caption at the top */
+.flow-card img.flow-img-bottom {
+  object-position: 50% 100%;
+}
+
+/* The shared photo note, shown once before the FAQ */
+.page-notes {
+  padding: 24px 0;
+  background: var(--bg);
+}
+
+.page-notes .sec-note {
+  margin: 0;
+}
+
+#choose {
+  padding-bottom: 48px;
+}
