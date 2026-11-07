@@ -4992,8 +4992,7 @@ a.trust-pill:hover {
 }
 
 /* lining figures so "01" doesn't read as "OI" */
-.fin-num,
-.process-dot {
+.fin-num {
   font-variant-numeric: lining-nums;
   font-feature-settings: "lnum" 1;
 }
@@ -5044,7 +5043,7 @@ a.trust-pill:hover {
   color: var(--fin-sub);
 }
 
-/* ---------- A: FINISHING (two options, 1px vertical rule) ---------- */
+/* ---------- A: FINISHING (diagram first) ---------- */
 #choose > .container,
 #finish-process > .container {
   width: min(1100px, 94vw);
@@ -5066,13 +5065,18 @@ a.trust-pill:hover {
   letter-spacing: 0.1em;
 }
 
-.fin-sub {
-  font-size: 13px;
-  color: var(--fin-sub);
-}
-
 .fin-sec .accent {
   color: var(--fin-accent);
+}
+
+/* line art: 1.4px strokes, round ends, no fill */
+.fin-svg,
+.process-dot svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .fin-options {
@@ -5089,23 +5093,51 @@ a.trust-pill:hover {
 .fin-option {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
   min-width: 0;
 }
 
-.fin-num-row {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  margin: 0;
+.fin-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 220px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #ebe3d6;
+  color: var(--fin-text);
+}
+
+.fin-visual .fin-num {
+  position: absolute;
+  top: 14px;
+  left: 18px;
 }
 
 .fin-num {
   font-family: var(--fin-num);
-  font-size: 44px;
+  font-size: 34px;
   font-weight: 400;
   line-height: 1;
   color: var(--fin-label);
+}
+
+.fin-svg {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+}
+
+.fin-svg .fin-hl {
+  stroke: var(--fin-accent);
+}
+
+.fin-svg .fin-fill {
+  fill: var(--fin-accent);
+  stroke: var(--fin-accent);
 }
 
 .fin-option .fin-label {
@@ -5126,51 +5158,53 @@ a.trust-pill:hover {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.06em;
-}
-
-.fin-desc {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.9;
-  letter-spacing: 0.04em;
-  color: #4a423a;
-}
-
-.fin-spec {
-  margin: 0;
-  border-top: 1px solid var(--fin-rule);
-}
-
-.fin-spec > div {
-  display: grid;
-  grid-template-columns: 84px minmax(0, 1fr);
-  padding: 11px 0;
-  border-bottom: 1px solid #e3dacb;
-  font-size: 12px;
-  line-height: 1.8;
-  letter-spacing: 0.04em;
-}
-
-.fin-spec dt {
-  color: var(--fin-label);
-}
-
-.fin-spec dd {
-  margin: 0;
   color: var(--fin-text);
 }
 
-/* ---------- B: PROCESS (rows of steps joined by lines) ---------- */
+.fin-line {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  color: var(--fin-sub);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.fin-uses {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.fin-uses li {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 12px;
+  border: 1px solid #c9bfae;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--fin-text);
+  white-space: nowrap;
+}
+
+/* ---------- B: PROCESS (pictogram steps) ---------- */
 .process-rows {
   margin-top: 8px;
 }
 
 .process-row {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-columns: 170px minmax(0, 1fr);
   align-items: center;
-  gap: 28px;
-  padding: 22px 0;
+  gap: 24px;
+  padding: 26px 0;
   border-top: 1px solid var(--fin-rule);
 }
 
@@ -5180,32 +5214,26 @@ a.trust-pill:hover {
 
 .process-head {
   display: grid;
-  justify-items: start;
-  gap: 8px;
+  gap: 6px;
 }
 
-.process-pill {
-  display: inline-flex;
-  align-items: center;
-  height: 22px;
-  padding: 0 10px;
-  border: 1px solid var(--fin-text);
-  border-radius: 999px;
+.process-kicker {
+  margin: 0;
   font-size: 11px;
-  letter-spacing: 0.12em;
-  color: var(--fin-text);
+  letter-spacing: 0.16em;
+  color: var(--fin-sub);
   white-space: nowrap;
 }
 
-.process-pill.is-filled {
-  background: var(--fin-text);
-  color: #fff;
+.process-row.is-default .process-kicker {
+  color: var(--fin-accent);
 }
 
 .process-name {
   margin: 0;
+  word-break: keep-all;
   font-family: var(--fin-serif);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.06em;
   color: var(--fin-text);
@@ -5216,44 +5244,41 @@ a.trust-pill:hover {
   margin: 0;
   padding: 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .process-steps li:not(.line) {
-  flex: 0 0 96px;
+  flex: 0 0 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  text-align: center;
 }
 
-/* the connecting line sits at the centre height of the 36px circles */
+/* joins the circles at their centre height */
 .process-steps .line {
   flex: 1;
+  min-width: 12px;
   height: 1px;
-  margin-top: 18px;
+  margin-bottom: 28px;
   background: #c9bfae;
 }
 
 .process-dot {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--fin-text);
+  width: 64px;
+  height: 64px;
+  border: 1px solid #c9bfae;
   border-radius: 50%;
-  background: transparent;
-  font-family: var(--fin-num);
-  font-size: 12px;
-  line-height: 1;
+  background: #fff;
   color: var(--fin-text);
 }
 
 .process-text {
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.6;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--fin-sub);
   white-space: nowrap;
 }
@@ -5279,6 +5304,12 @@ a.trust-pill:hover {
   color: var(--fin-text);
 }
 
+@media (max-width: 1023px) {
+  .process-steps li:not(.line) {
+    flex-basis: 84px;
+  }
+}
+
 @media (max-width: 767px) {
   #choose,
   #finish-process {
@@ -5302,7 +5333,7 @@ a.trust-pill:hover {
   /* B: vertical steps, circle on the left and label on the right */
   .process-row {
     grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
+    gap: 18px;
   }
 
   .process-steps {
@@ -5313,19 +5344,18 @@ a.trust-pill:hover {
   .process-steps li:not(.line) {
     flex: none;
     flex-direction: row;
-    gap: 14px;
-    text-align: left;
+    gap: 16px;
   }
 
   .process-steps .line {
     flex: none;
     width: 1px;
-    height: 16px;
-    margin: 0 0 0 18px;
+    height: 18px;
+    min-width: 0;
+    margin: 0 0 0 32px;
   }
 
-  .process-text br {
-    display: none;
+  .process-text {
+    font-size: 12px;
   }
 }
-
