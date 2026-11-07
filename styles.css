@@ -1,5 +1,8 @@
 :root {
   --vw: 1vw;
+  --font-serif-jp: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-sans-jp: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-num: "Cormorant Garamond", Georgia, serif;
   --bg: #f7f6f2;
   --surface: #fcfcfb;
   --surface-deep: #f2efe9;
@@ -4824,9 +4827,9 @@ a.trust-pill:hover {
   --fin-label: #9a8468;
   --fin-rule: #d6cbb8;
   --fin-accent: #b5362c;
-  --fin-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
-  --fin-sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
-  --fin-num: "Cormorant Garamond", Georgia, serif;
+  --fin-serif: var(--font-serif-jp);
+  --fin-sans: var(--font-sans-jp);
+  --fin-num: var(--font-num);
   background: var(--fin-bg);
   color: var(--fin-text);
   font-family: var(--fin-sans);
@@ -4869,10 +4872,6 @@ a.trust-pill:hover {
   color: var(--fin-sub);
 }
 
-.fin-accent {
-  color: var(--fin-accent);
-}
-
 .fin-label {
   margin: 0;
   font-size: 11px;
@@ -4880,189 +4879,6 @@ a.trust-pill:hover {
   letter-spacing: 0.2em;
   color: var(--fin-sub);
   white-space: nowrap;
-}
-
-/* A: two options separated by a single vertical rule */
-.fin-options {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  width: min(960px, 100%);
-  margin: 8px auto 0;
-}
-
-.fin-option {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 0 56px 0 0;
-}
-
-.fin-option + .fin-option {
-  padding: 0 0 0 56px;
-  border-left: 1px solid var(--fin-rule);
-}
-
-.fin-num-row {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  margin: 0;
-}
-
-.fin-num {
-  font-family: var(--fin-num);
-  font-size: 44px;
-  font-weight: 400;
-  line-height: 1;
-  color: var(--fin-label);
-}
-
-.fin-option.is-default .fin-num,
-.fin-option.is-default .fin-label {
-  color: var(--fin-accent);
-}
-
-.fin-name {
-  margin: 0;
-  font-family: var(--fin-serif);
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.06em;
-}
-
-.fin-desc {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.9;
-  letter-spacing: 0.04em;
-  color: var(--fin-sub);
-}
-
-.fin-spec {
-  margin: 4px 0 0;
-  border-top: 1px solid var(--fin-rule);
-}
-
-.fin-spec > div {
-  display: grid;
-  grid-template-columns: 6.5em minmax(0, 1fr);
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--fin-rule);
-  font-size: 12px;
-  line-height: 1.8;
-  letter-spacing: 0.04em;
-}
-
-.fin-spec dt {
-  color: var(--fin-label);
-}
-
-.fin-spec dd {
-  margin: 0;
-  color: var(--fin-text);
-}
-
-/* B: process rows, steps joined by a 1px line */
-.process-rows {
-  display: grid;
-  gap: 14px;
-  width: min(1040px, 100%);
-  margin: 8px auto 0;
-}
-
-.process-row {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  align-items: center;
-  gap: 24px;
-  padding: 24px 0;
-  border-top: 1px solid var(--fin-rule);
-  border-bottom: 1px solid var(--fin-rule);
-}
-
-.process-head {
-  display: grid;
-  gap: 6px;
-}
-
-.process-name {
-  margin: 0;
-  font-family: var(--fin-serif);
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-}
-
-.process-steps {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.process-steps li {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  gap: 10px;
-  text-align: center;
-}
-
-.process-steps li + li::before {
-  content: "";
-  position: absolute;
-  top: 18px;
-  left: calc(-50% + 18px);
-  right: calc(50% + 18px);
-  height: 1px;
-  background: var(--fin-rule);
-}
-
-.process-dot {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--fin-rule);
-  border-radius: 50%;
-  background: var(--fin-bg);
-  font-family: var(--fin-num);
-  font-size: 18px;
-  line-height: 1;
-  color: var(--fin-sub);
-}
-
-.process-text {
-  font-size: 12px;
-  line-height: 1.7;
-  letter-spacing: 0.04em;
-  color: var(--fin-sub);
-  white-space: nowrap;
-}
-
-.process-steps li.is-logo .process-dot {
-  border-color: var(--fin-accent);
-  background: var(--fin-accent);
-  color: #fff;
-}
-
-.process-steps li.is-logo .process-text {
-  font-weight: 700;
-  color: var(--fin-accent);
-}
-
-.process-steps li.is-final .process-dot {
-  border-color: var(--fin-text);
-  background: var(--fin-text);
-  color: #fff;
-}
-
-.process-steps li.is-final .process-text {
-  color: var(--fin-text);
 }
 
 /* C: comparison table */
@@ -5164,54 +4980,6 @@ a.trust-pill:hover {
 }
 
 @media (max-width: 767px) {
-  /* A: stack, vertical rule becomes horizontal */
-  .fin-options {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .fin-option,
-  .fin-option + .fin-option {
-    padding: 0;
-  }
-
-  .fin-option + .fin-option {
-    margin-top: 32px;
-    padding-top: 32px;
-    border-left: 0;
-    border-top: 1px solid var(--fin-rule);
-  }
-
-  /* B: vertical process, dot on the left, label on the right */
-  .process-row {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
-  }
-
-  .process-steps {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 14px;
-  }
-
-  .process-steps li {
-    grid-template-columns: 36px minmax(0, 1fr);
-    align-items: center;
-    justify-items: start;
-    gap: 14px;
-    text-align: left;
-  }
-
-  .process-steps li + li::before {
-    top: -14px;
-    left: 18px;
-    right: auto;
-    width: 1px;
-    height: 14px;
-  }
-
-  .process-text br {
-    display: none;
-  }
-
   .compare-head {
     flex-direction: column;
     align-items: flex-start;
@@ -5270,3 +5038,289 @@ a.trust-pill:hover {
 .fin-sec .sec-note {
   color: var(--fin-sub);
 }
+
+/* ---------- A: FINISHING (two options, 1px vertical rule) ---------- */
+#choose > .container,
+#finish-process > .container {
+  width: min(1100px, 94vw);
+}
+
+#choose,
+#finish-process {
+  padding-block: 96px;
+}
+
+.fin-overline {
+  font-family: var(--fin-num);
+  font-size: 12px;
+}
+
+.fin-title {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.fin-sub {
+  font-size: 13px;
+  color: var(--fin-sub);
+}
+
+.fin-sec .accent {
+  color: var(--fin-accent);
+}
+
+.fin-options {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+  column-gap: 56px;
+  margin-top: 8px;
+}
+
+.fin-divider {
+  background: var(--fin-rule);
+}
+
+.fin-option {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.fin-num-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0;
+}
+
+.fin-num {
+  font-family: var(--fin-num);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--fin-label);
+}
+
+.fin-option .fin-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--fin-sub);
+}
+
+.fin-option.is-default .fin-num,
+.fin-option.is-default .fin-label {
+  color: var(--fin-accent);
+}
+
+.fin-name {
+  margin: 0;
+  font-family: var(--fin-serif);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+}
+
+.fin-desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  color: #4a423a;
+}
+
+.fin-spec {
+  margin: 0;
+  border-top: 1px solid var(--fin-rule);
+}
+
+.fin-spec > div {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  padding: 11px 0;
+  border-bottom: 1px solid #e3dacb;
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+
+.fin-spec dt {
+  color: var(--fin-label);
+}
+
+.fin-spec dd {
+  margin: 0;
+  color: var(--fin-text);
+}
+
+/* ---------- B: PROCESS (rows of steps joined by lines) ---------- */
+.process-rows {
+  margin-top: 8px;
+}
+
+.process-row {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+  padding: 22px 0;
+  border-top: 1px solid var(--fin-rule);
+}
+
+.process-row:last-child {
+  border-bottom: 1px solid var(--fin-rule);
+}
+
+.process-head {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+}
+
+.process-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 10px;
+  border: 1px solid var(--fin-text);
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--fin-text);
+  white-space: nowrap;
+}
+
+.process-pill.is-filled {
+  background: var(--fin-text);
+  color: #fff;
+}
+
+.process-name {
+  margin: 0;
+  font-family: var(--fin-serif);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--fin-text);
+}
+
+.process-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.process-steps li:not(.line) {
+  flex: 0 0 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+/* the connecting line sits at the centre height of the 36px circles */
+.process-steps .line {
+  flex: 1;
+  height: 1px;
+  margin-top: 18px;
+  background: #c9bfae;
+}
+
+.process-dot {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--fin-text);
+  border-radius: 50%;
+  background: transparent;
+  font-family: var(--fin-num);
+  font-size: 12px;
+  line-height: 1;
+  color: var(--fin-text);
+}
+
+.process-text {
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  color: var(--fin-sub);
+  white-space: nowrap;
+}
+
+.process-steps li.is-logo .process-dot {
+  border-color: var(--fin-accent);
+  background: var(--fin-accent);
+  color: #fff;
+}
+
+.process-steps li.is-logo .process-text {
+  font-weight: 700;
+  color: var(--fin-accent);
+}
+
+.process-steps li.is-final .process-dot {
+  border-color: var(--fin-text);
+  background: var(--fin-text);
+  color: #fff;
+}
+
+.process-steps li.is-final .process-text {
+  color: var(--fin-text);
+}
+
+@media (max-width: 767px) {
+  #choose,
+  #finish-process {
+    padding-block: 64px;
+  }
+
+  .fin-title {
+    font-size: 24px;
+  }
+
+  /* A: one column, the vertical rule becomes a horizontal one */
+  .fin-options {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 32px;
+  }
+
+  .fin-divider {
+    height: 1px;
+  }
+
+  /* B: vertical steps, circle on the left and label on the right */
+  .process-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .process-steps {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .process-steps li:not(.line) {
+    flex: none;
+    flex-direction: row;
+    gap: 14px;
+    text-align: left;
+  }
+
+  .process-steps .line {
+    flex: none;
+    width: 1px;
+    height: 16px;
+    margin: 0 0 0 18px;
+  }
+
+  .process-text br {
+    display: none;
+  }
+}
+

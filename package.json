@@ -5,6 +5,7 @@
   "description": "Local static website starter",
   "scripts": {
     "local": "node server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "version-assets": "node tools/asset-version.js"
   }
 }
