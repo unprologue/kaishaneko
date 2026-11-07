@@ -5359,3 +5359,23 @@ a.trust-pill:hover {
     font-size: 12px;
   }
 }
+
+/* Delivery time: "rush orders can be discussed" line under the pricing summary */
+/* sits right under the previous line: cancel the section's vertical gap */
+.urgent-note {
+  margin: calc(4px - clamp(1.4rem, 3vw, 2.2rem)) 0 0;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #6f655a;
+  text-align: center;
+}
+
+.urgent-note a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.urgent-contact {
+  margin-top: calc(4px - clamp(1.4rem, 3vw, 2.2rem));
+}
