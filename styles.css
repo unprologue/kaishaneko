@@ -5589,11 +5589,6 @@ a.trust-pill:hover {
   }
 }
 
-/* Order flow: delivered-photo thumbnail keeps the cat, not the old caption at the top */
-.flow-card img.flow-img-bottom {
-  object-position: 50% 100%;
-}
-
 /* The shared photo note, shown once before the FAQ */
 .page-notes {
   padding: 24px 0;
