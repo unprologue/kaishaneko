@@ -36,7 +36,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500&display=swap"
     />
-    <link rel="stylesheet" href="styles.css?v=e60cca644c" />
+    <link rel="stylesheet" href="styles.css?v=ed2199473e" />
   </head>
   <body>
     <header class="site-header">
@@ -77,21 +77,7 @@
               <span>願いを込めてロゴを貼る。</span>
             </p>
             <p class="hero-subtext">会社のための、世界にひとつの縁起物。</p>
-            <div class="finish-picker">
-              <p class="finish-picker-title">仕上げ方法は、2つから選べます</p>
-              <div class="finish-picker-grid">
-                <a class="finish-picker-item" href="#choose">
-                  <span class="finish-picker-tag">定番</span>
-                  <b class="phrase">自分たちで<wbr>貼る</b>
-                  <span class="phrase">みんなで<wbr>願いを<wbr>込めて<wbr>仕上げる</span>
-                </a>
-                <a class="finish-picker-item" href="#choose">
-                  <span class="finish-picker-tag">すぐ飾れる</span>
-                  <b class="phrase">貼り付け済みで<wbr>お届け</b>
-                  <span class="phrase">お祝いで<wbr>贈る<wbr>方に<wbr>おすすめ</span>
-                </a>
-              </div>
-            </div>
+            <a class="hero-finish-link" href="#choose">仕上げは2通り：自分たちで貼る／貼り付け済み →</a>
             <p class="hero-price">
               <span class="hero-price-num">9,900円</span>
               <span class="hero-price-unit">（税込）から</span>
@@ -108,12 +94,7 @@
               >
               <a class="btn btn-outline" href="#finish">仕上げ方を見る</a>
             </div>
-            <ul class="trust-pills" aria-label="ご注文について">
-              <li><a class="trust-pill" href="#payment">請求書払い・銀行振込OK</a></li>
-              <li><span class="trust-pill">クレジットカード各種</span></li>
-              <li><span class="trust-pill">国内送料無料</span></li>
-              <li><span class="trust-pill">法人・個人どちらも</span></li>
-            </ul>
+            <p class="hero-trust"><a href="#payment">請求書払い・銀行振込OK</a> ／ 法人・個人どちらも</p>
           </div>
           <div class="hero-visual" aria-hidden="true">
             <img
@@ -140,89 +121,56 @@
           </p>
           <div class="callout">
             <p class="callout-title phrase">会社猫は、<wbr>ロゴを<wbr>貼って<wbr>完成します。</p>
-            <p class="phrase">
-              本体の<wbr>色や<wbr>文様は、<wbr>職人が<wbr>九谷焼で<wbr>焼き上げます。<wbr>お腹の<wbr>ロゴは、<wbr>社員の<wbr>皆さまが<wbr>願いを<wbr>込めて<wbr>貼る<wbr>「仕上げ<span class="nowrap">」と</span>してお届けします。
-            </p>
-            <p class="phrase">
-              届いたら<wbr>すぐ<wbr>飾りたい<wbr>方や、<wbr>お祝いで<wbr>贈る<wbr>方には、<wbr>ロゴを<wbr>貼った<wbr>状態での<wbr>お届けも<wbr>お選びいただけます。
-            </p>
           </div>
         </div>
       </section>
 
-      <section id="delivery" class="sec">
+      <section id="choose" class="sec fin-sec" aria-labelledby="choose-title">
         <div class="container sec-wrap">
-          <div class="sec-head">
-            <p class="sec-eyebrow">Steps</p>
-            <h2 class="sec-title">お届けから設置まで</h2>
+          <div class="fin-stage">
+            <div class="fin-head">
+              <p class="fin-overline">FINISHING</p>
+              <h2 id="choose-title" class="fin-title">ロゴの仕上げは、<wbr>二通り。</h2>
+            </div>
+            <figure class="fin-photo">
+              <img src="images/processed/finishing-01-hands.webp" alt="会社猫のお腹に、社員みんなでロゴを貼っている手元" width="467" height="623" loading="lazy" />
+            </figure>
+            <div class="fin-mirror">
+              <div class="fin-col fin-col-01">
+                <div class="fin-text is-default">
+                  <span class="fin-bignum" aria-hidden="true">01</span>
+                  <p class="fin-label">定番・おすすめ</p>
+                  <h3 class="fin-name">自分たちで貼る</h3>
+                  <p class="fin-line"><span class="nowrap">ロゴシール</span>を同梱。<br />みんなで仕上げる。</p>
+                  <ul class="fin-uses"><li>自社に飾る</li><li>キックオフ・周年</li></ul>
+                </div>
+              </div>
+              <div class="fin-col fin-col-02">
+                <div class="fin-text">
+                  <span class="fin-bignum" aria-hidden="true">02</span>
+                  <p class="fin-label">すぐ飾れる</p>
+                  <h3 class="fin-name">貼り付け済みでお届け</h3>
+                  <p class="fin-line">開けたら、<br />そのまま飾れる。</p>
+                  <ul class="fin-uses"><li>取引先へのお祝い</li><li>受付にすぐ</li></ul>
+                </div>
+                <figure class="fin-cutout">
+                  <img src="images/processed/finishing-02-cat.webp" alt="ロゴが貼られた状態で、「御祝」の立札と並ぶ会社猫" width="871" height="928" loading="lazy" />
+                </figure>
+              </div>
+            </div>
           </div>
-          <ol class="delivery-steps">
-            <li class="delivery-step">
-              <figure class="delivery-photo">
-                <img
-                  src="assets/service/07-delivered-before-logo.jpg"
-                  alt="箱に入ったグリーンの会社猫と、企業ロゴのシール"
-                  width="1080"
-                  height="1350"
-                  loading="lazy"
-                />
-              </figure>
-              <div class="delivery-body">
-                <p class="delivery-label"><span>STEP 01</span>届く</p>
-                <h3>ロゴを貼る前の状態で届きます。</h3>
-                <p class="phrase">自社カラー・社風に<wbr>合わせて<wbr>デザイン</p>
-              </div>
-            </li>
-            <li class="delivery-step">
-              <figure class="delivery-photo">
-                <img
-                  src="assets/delivery/design-proposal.jpg"
-                  alt="企業ロゴとコーポレートカラーをもとにしたデザイン案"
-                  width="1021"
-                  height="1276"
-                  loading="lazy"
-                />
-              </figure>
-              <div class="delivery-body">
-                <p class="delivery-label"><span>STEP 02</span>デザイン</p>
-                <h3>デザイン案</h3>
-                <p class="phrase">ロゴ・<span class="nowrap">コーポレートカラー</span>・<wbr>社風から、<wbr>一社ごとに<wbr>デザインを<wbr>ご提案します。</p>
-              </div>
-            </li>
-            <li class="delivery-step">
-              <figure class="delivery-photo">
-                <img
-                  src="assets/service/09-reception.jpg"
-                  alt="受付に飾られた、企業ロゴ入りのグリーンの会社猫"
-                  width="1080"
-                  height="1350"
-                  loading="lazy"
-                />
-              </figure>
-              <div class="delivery-body">
-                <p class="delivery-label"><span>STEP 03</span>設置</p>
-                <h3>完成したら、受付に。</h3>
-                <p class="phrase">毎日、<wbr>社員と<wbr>お客さまを<wbr>迎える</p>
-              </div>
-            </li>
-          </ol>
-          <p class="sec-note">
-            <span class="sentence">※掲載している<wbr>企業名・ロゴ・デザインは、<wbr>サービスイメージを<wbr>表現する<wbr>ための<wbr>架空の<wbr>ものです。</span><br class="br-pc" /><span class="sentence">※写真は<wbr>イメージであり<wbr>ご利用の<wbr>端末に<wbr>よって、<wbr>色味は<wbr>実物と<wbr>異なる<wbr>場合が<wbr>ございます。</span>
-          </p>
+          <p class="sec-note">※どちらの仕上げ方法も価格は同じです。</p>
         </div>
       </section>
 
       <section id="finish" class="sec" data-pc-scale="700">
         <div class="container sec-wrap">
           <div class="sec-head">
-            <p class="sec-eyebrow">Finishing</p>
-            <h2 class="sec-title">仕上げは、みんなの手で。</h2>
+            <p class="sec-eyebrow">How to</p>
+            <h2 class="sec-title">ロゴの貼り方</h2>
           </div>
           <p class="sec-lead">
-            <span class="sentence">会社の<wbr>未来を<wbr>思い描きながら、<wbr>社員みんなで<wbr>ロゴを<wbr>貼る。</span><br class="br-pc" /><span class="sentence">だるまに<wbr>目を<wbr>入れるように、<wbr>会社猫は<wbr>ロゴを<wbr>貼って<wbr>完成します。</span><br class="br-pc" /><span class="sentence"><span class="nowrap">ロゴシール</span>と<wbr>貼り方の<wbr>説明書を<wbr>同梱しているので、<wbr>どなたでも<wbr>簡単に<wbr>仕上げられます。</span>
-          </p>
-          <p class="sec-lead finish-alt">
-            すぐに飾りたい方は、<a href="#choose">ロゴを貼った状態でのお届け</a>もお選びいただけます。
+            <span class="sentence">だるまに<wbr>目を<wbr>入れるように、<wbr>会社猫は<wbr>ロゴを<wbr>貼って<wbr>完成します。</span>
           </p>
           <figure class="experience-photo">
             <img
@@ -233,7 +181,6 @@
               loading="lazy"
             />
           </figure>
-          <h3 class="finish-steps-title">ロゴの貼り方</h3>
           <div class="guide-hero">
             <div class="guide-hero-copy">
               <img
@@ -327,45 +274,6 @@
         </div>
       </section>
 
-      <section id="choose" class="sec fin-sec" aria-labelledby="choose-title">
-        <div class="container sec-wrap">
-          <div class="fin-stage">
-            <div class="fin-head">
-              <p class="fin-overline">FINISHING</p>
-              <h2 id="choose-title" class="fin-title">ロゴの仕上げは、<wbr>二通り。</h2>
-            </div>
-            <figure class="fin-photo">
-              <img src="images/processed/finishing-01-hands.webp" alt="会社猫のお腹に、社員みんなでロゴを貼っている手元" width="467" height="623" loading="lazy" />
-            </figure>
-            <div class="fin-mirror">
-              <div class="fin-col fin-col-01">
-                <div class="fin-text is-default">
-                  <span class="fin-bignum" aria-hidden="true">01</span>
-                  <p class="fin-label">定番・おすすめ</p>
-                  <h3 class="fin-name">自分たちで貼る</h3>
-                  <p class="fin-line"><span class="nowrap">ロゴシール</span>を同梱。<br />みんなで仕上げる。</p>
-                  <ul class="fin-uses"><li>自社に飾る</li><li>キックオフ・周年</li></ul>
-                </div>
-              </div>
-              <div class="fin-col fin-col-02">
-                <div class="fin-text">
-                  <span class="fin-bignum" aria-hidden="true">02</span>
-                  <p class="fin-label">すぐ飾れる</p>
-                  <h3 class="fin-name">貼り付け済みでお届け</h3>
-                  <p class="fin-line">開けたら、<br />そのまま飾れる。</p>
-                  <ul class="fin-uses"><li>取引先へのお祝い</li><li>受付にすぐ</li></ul>
-                </div>
-                <figure class="fin-cutout">
-                  <img src="images/processed/finishing-02-cat.webp" alt="ロゴが貼られた状態で、「御祝」の立札と並ぶ会社猫" width="871" height="928" loading="lazy" />
-                </figure>
-              </div>
-            </div>
-          </div>
-          <p class="sec-note">
-            <span class="sentence">※掲載している<wbr>企業名・ロゴ・デザインは、<wbr>サービスイメージを<wbr>表現する<wbr>ための<wbr>架空の<wbr>ものです。</span><br class="br-pc" /><span class="sentence">※写真は<wbr>イメージであり<wbr>ご利用の<wbr>端末に<wbr>よって、<wbr>色味は<wbr>実物と<wbr>異なる<wbr>場合が<wbr>ございます。</span>
-          </p>
-        </div>
-      </section>
 
       <section id="gallery" class="sec">
         <div class="container sec-wrap">
@@ -508,54 +416,12 @@
               <p class="phrase">来客を<wbr>迎える、<wbr>会社の<wbr>顔として。</p>
             </article>
           </div>
-          <p class="gift-note phrase">
-            お祝いで<wbr>贈るなら、<b>ロゴを<wbr>貼った<wbr>状態での<wbr>お届け</b>が<wbr>おすすめ。<wbr>贈り先で<wbr>すぐに<wbr>飾っていただけます。
-            <a class="nowrap" href="#choose">仕上げ方法を見る</a>
-          </p>
+          <div class="sec-actions">
+            <a class="btn btn-outline" href="#choose">仕上げ方法を見る</a>
+          </div>
           <p class="sec-note">
-            <span class="sentence"><span class="nowrap">キックオフ／</span><wbr><span class="nowrap">チームビルディング／</span><wbr>ノベルティ配布にも</span><br class="br-pc" /><span class="sentence">※動画は<wbr>音声付きです。<wbr>掲載している<wbr>企業名・ロゴ・デザインは<wbr>架空の<wbr>ものです。</span>
+            <span class="sentence"><span class="nowrap">キックオフ／</span><wbr><span class="nowrap">チームビルディング／</span><wbr>ノベルティ配布にも</span><br class="br-pc" /><span class="sentence">※動画は<wbr>音声付きです。</span>
           </p>
-        </div>
-      </section>
-
-      <section id="finish-process" class="sec fin-sec" aria-labelledby="process-title">
-        <div class="container sec-wrap">
-          <div class="fin-head">
-            <p class="fin-overline">PROCESS</p>
-            <h2 id="process-title" class="fin-title">違いは、<wbr><span class="accent">ロゴを貼る</span>のが<wbr>誰か。</h2>
-          </div>
-          <div class="process-rows">
-            <div class="process-row is-default">
-              <div class="process-head">
-                <p class="process-kicker">01 定番</p>
-                <p class="process-name">自分たちで貼る</p>
-              </div>
-              <ol class="process-steps">
-                <li><span class="process-dot"><svg viewBox="0 0 30 30" width="30" height="30" aria-hidden="true"><path d="M5 25 V15 a10 10 0 0 1 20 0 V25" /><path d="M3 25 H27" /><path d="M15 22 c-3.2 -2 -3.2 -5.2 0 -9 c3.2 3.8 3.2 7 0 9 z" /></svg></span><span class="process-text">窯で焼く</span></li>
-                <li class="line" aria-hidden="true"></li>
-                <li><span class="process-dot"><svg viewBox="0 0 30 30" width="30" height="30" aria-hidden="true"><path d="M15 4 L26 9 L15 14 L4 9 Z" /><path d="M4 9 V21 L15 26 L26 21 V9" /><path d="M15 14 V26" /></svg></span><span class="process-text">届く</span></li>
-                <li class="line" aria-hidden="true"></li>
-                <li class="is-logo"><span class="process-dot"><svg viewBox="0 0 30 30" width="30" height="30" aria-hidden="true"><path d="M2 21 L10 17" /><path d="M28 21 L20 17" /><rect x="11" y="11" width="8" height="8" rx="1" /></svg></span><span class="process-text">みんなで貼る</span></li>
-                <li class="line" aria-hidden="true"></li>
-                <li class="is-final"><span class="process-dot"><svg viewBox="0 0 30 30" width="30" height="30" aria-hidden="true"><path d="M15 4 l1.9 3.9 4.3 .6 -3.1 3 .7 4.3 -3.8 -2 -3.8 2 .7 -4.3 -3.1 -3 4.3 -.6 z" /><path d="M10 26 V20 H20 V26" /><path d="M7 26 H23" /></svg></span><span class="process-text">飾る</span></li>
-              </ol>
-            </div>
-            <div class="process-row">
-              <div class="process-head">
-                <p class="process-kicker">02 すぐ飾れる</p>
-                <p class="process-name">貼り付け済みで<wbr>お届け</p>
-              </div>
-              <ol class="process-steps">
-                <li><span class="process-dot"><svg viewBox="0 0 30 30" width="30" height="30" aria-hidden="true"><path d="M5 25 V15 a10 10 0 0 1 20 0 V25" /><path d="M3 25 H27" /><path d="M15 22 c-3.2 -2 -3.2 -5.2 0 -9 c3.2 3.8 3.2 7 0 9 z" /></svg></span><span class="process-text">窯で焼く</span></li>
-                <li class="line" aria-hidden="true"></li>
-                <li class="is-logo"><span class="process-dot"><svg viewBox="0 0 30 30" width="30" height="30" aria-hidden="true"><rect x="8" y="5" width="14" height="14" rx="1.5" /><path d="M11.5 12 l2.5 2.5 l4.5 -5" /><path d="M6 24 H24" /></svg></span><span class="process-text">工房で貼る</span></li>
-                <li class="line" aria-hidden="true"></li>
-                <li><span class="process-dot"><svg viewBox="0 0 30 30" width="30" height="30" aria-hidden="true"><path d="M15 4 L26 9 L15 14 L4 9 Z" /><path d="M4 9 V21 L15 26 L26 21 V9" /><path d="M15 14 V26" /></svg></span><span class="process-text">届く</span></li>
-                <li class="line" aria-hidden="true"></li>
-                <li class="is-final"><span class="process-dot"><svg viewBox="0 0 30 30" width="30" height="30" aria-hidden="true"><path d="M15 4 l1.9 3.9 4.3 .6 -3.1 3 .7 4.3 -3.8 -2 -3.8 2 .7 -4.3 -3.1 -3 4.3 -.6 z" /><path d="M10 26 V20 H20 V26" /><path d="M7 26 H23" /></svg></span><span class="process-text">すぐ飾る</span></li>
-              </ol>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -569,7 +435,6 @@
             <li class="flow-card">
               <span class="flow-num">STEP 01</span>
               <h3 class="phrase">ご注文・<wbr>仕上げ方法を<wbr>選ぶ</h3>
-              <p class="phrase">ご注文時に<wbr>「自分たちで<wbr>貼る<wbr>（定番）」か<wbr>「貼り付け済み<span class="nowrap">」を</span><wbr>お選びいただきます。</p>
               <p class="flow-pay phrase">お支払いは<wbr>カード・<wbr>銀行振込・<wbr>請求書払いから<wbr>選べます。</p>
             </li>
             <li class="flow-card">
@@ -579,6 +444,7 @@
             </li>
             <li class="flow-card">
               <span class="flow-num">STEP 03</span>
+              <img src="assets/delivery/design-proposal.jpg" alt="企業ロゴとコーポレートカラーをもとにしたデザイン案" width="1021" height="1276" loading="lazy" />
               <h3>デザイン案をご確認</h3>
               <p class="phrase">ロゴ・<span class="nowrap">コーポレートカラー</span>・<wbr>社風から、<wbr>一社ごとに<wbr>デザインを<wbr>ご提案します。<wbr>（修正は<wbr>2回まで）</p>
             </li>
@@ -590,14 +456,12 @@
             </li>
             <li class="flow-card">
               <span class="flow-num">STEP 05</span>
+              <img class="flow-img-bottom" src="assets/service/07-delivered-before-logo.jpg" alt="箱に入って届いた会社猫と、企業ロゴのシール" width="1080" height="1350" loading="lazy" />
               <h3>お届け・仕上げ</h3>
               <p class="phrase">立札付きで<wbr>お届け。<wbr>「自分たちで<wbr>貼る<span class="nowrap">」は</span><wbr><span class="nowrap">ロゴシール</span>と<wbr>説明書を<wbr>同梱、<wbr>願いを<wbr>込めて<wbr>貼って<wbr>完成です。<wbr>「貼り付け済み<span class="nowrap">」は</span><wbr>ロゴを<wbr>貼った<wbr>状態で<wbr>届くので、<wbr>すぐに<wbr>飾れます。</p>
               <p class="flow-note phrase">※請求書払いは<wbr>納品後に<wbr>請求書を<wbr>発行</p>
             </li>
           </ol>
-          <p class="sec-note sec-note-left">
-            <span class="sentence">※掲載している<wbr>企業名・ロゴ・デザインは、<wbr>サービスイメージを<wbr>表現する<wbr>ための<wbr>架空の<wbr>ものです。</span><br class="br-pc" /><span class="sentence">※写真は<wbr>イメージであり、<wbr>ご利用の<wbr>端末に<wbr>よって<wbr>色味は<wbr>実物と<wbr>異なる<wbr>場合が<wbr>ございます。</span>
-          </p>
           <div class="sec-actions">
             <a
               class="btn btn-primary"
@@ -726,50 +590,6 @@
         </div>
       </section>
 
-      <section id="compare" class="sec fin-sec" aria-labelledby="compare-title">
-        <div class="container sec-wrap">
-          <div class="compare-head">
-            <div>
-              <p class="fin-overline">COMPARE</p>
-              <h2 id="compare-title" class="fin-title">仕上げ方法を選ぶ</h2>
-            </div>
-            <p class="fin-sub">ロゴを貼る<wbr>タイミングが<wbr>違います</p>
-          </div>
-          <div class="compare-scroll">
-            <table class="compare-table">
-              <thead>
-                <tr>
-                  <td></td>
-                  <th scope="col"><span class="compare-pill is-filled">定番・おすすめ</span><span class="compare-name">自分たちで貼る</span></th>
-                  <th scope="col"><span class="compare-pill">すぐ飾れる</span><span class="compare-name">貼り付け済みで<wbr>お届け</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="is-accent">
-                  <th scope="row">ロゴを貼るのは</th>
-                  <td>みなさん<wbr>（社員みんなで）</td>
-                  <td>工房<wbr>（お届け前に）</td>
-                </tr>
-                <tr>
-                  <th scope="row">届く状態</th>
-                  <td class="phrase">ロゴなし＋<wbr><span class="nowrap">ロゴシール</span>・<wbr>説明書を<wbr>同梱</td>
-                  <td class="phrase">ロゴ<wbr>貼り付け済み<wbr>（開けて<wbr>すぐ<wbr>飾れる）</td>
-                </tr>
-                <tr>
-                  <th scope="row">向いている方</th>
-                  <td class="phrase">自社に<wbr>飾る／<wbr><span class="nowrap">キックオフ</span>・<wbr>周年の<wbr>行事に</td>
-                  <td class="phrase">取引先への<wbr>お祝い／<wbr>受付に<wbr>すぐ<wbr>飾りたい</td>
-                </tr>
-                <tr>
-                  <th scope="row">価格</th>
-                  <td colspan="2">どちらも同額</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       <section class="sec variations" data-pc-scale="1024" aria-label="選べる6色・選べる4サイズ">
         <div class="container variation-grid">
           <div id="colors" class="sec-wrap variation-col">
@@ -803,9 +623,6 @@
                 <p class="color-name"><span class="color-chip" style="--swatch: #fa0006" aria-hidden="true"></span>レッド</p>
               </li>
             </ul>
-            <p class="sec-note">
-              <span class="sentence">※写真は<wbr>イメージです。<wbr>ご利用の<wbr>端末に<wbr>よって、<wbr>色味は<wbr>実物と<wbr>異なる<wbr>場合が<wbr>ございます。</span>
-            </p>
           </div>
           <div id="sizes" class="sec-wrap variation-col">
             <div class="sec-head">
@@ -848,9 +665,17 @@
               </li>
             </ul>
             <p class="sec-note">
-              <span class="sentence">※XSサイズのみ、<wbr>S・M・Lとは<wbr>猫の<wbr>形が<wbr>異なります。</span><br class="br-pc" /><span class="sentence">※掲載している<wbr>企業名・ロゴ・デザインは、<wbr>サービスイメージを<wbr>表現する<wbr>ための<wbr>架空の<wbr>ものです。</span>
+              <span class="sentence">※XSサイズのみ、<wbr>S・M・Lとは<wbr>猫の<wbr>形が<wbr>異なります。</span>
             </p>
           </div>
+        </div>
+      </section>
+
+      <section class="page-notes" aria-label="写真について">
+        <div class="container">
+          <p class="sec-note">
+            <span class="sentence">※掲載している<wbr>企業名・ロゴ・デザインは、<wbr>サービスイメージを<wbr>表現する<wbr>ための<wbr>架空の<wbr>ものです。</span><br class="br-pc" /><span class="sentence">※写真は<wbr>イメージであり、<wbr>ご利用の<wbr>端末に<wbr>よって<wbr>色味は<wbr>実物と<wbr>異なる<wbr>場合が<wbr>ございます。</span>
+          </p>
         </div>
       </section>
 
@@ -867,7 +692,7 @@
                 <span class="faq-icon" aria-hidden="true"></span>
               </summary>
               <div class="faq-answer">
-                <span class="phrase">A. ご注文時に<wbr>選べます。<wbr>定番は<wbr>「自分たちで<wbr>貼る<span class="nowrap">」で</span>、<wbr><span class="nowrap">ロゴシール</span>と<wbr>貼り方の<wbr>説明書を<wbr>同梱してお届けします。<wbr>すぐ<wbr>飾りたい<wbr>場合は<wbr>「貼り付け済み<span class="nowrap">」を</span><wbr>お選びください。</span>
+                <span class="phrase">A. ご注文時に<wbr>「自分たちで<wbr>貼る<span class="nowrap">」「</span>貼り付け済み<span class="nowrap">」から</span><wbr>選べます。</span>
               </div>
             </details>
             <details class="faq-item">
