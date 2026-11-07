@@ -101,3 +101,16 @@ if (heroSection && "IntersectionObserver" in window) {
     document.body.classList.toggle("is-past-hero", !entry.isIntersecting);
   }).observe(heroSection);
 }
+
+// On phones, show "仕上げは、みんなの手で。" exactly as on a 1440px PC, scaled to the screen width.
+const finishSection = document.getElementById("finish");
+const FINISH_PC_WIDTH = 1440;
+const fitFinishSection = () => {
+  if (!finishSection) return;
+  const viewportWidth = document.documentElement.clientWidth;
+  const scaled = viewportWidth <= 700;
+  finishSection.classList.toggle("is-pc-scaled", scaled);
+  finishSection.style.zoom = scaled ? String(viewportWidth / FINISH_PC_WIDTH) : "";
+};
+fitFinishSection();
+window.addEventListener("resize", fitFinishSection);
