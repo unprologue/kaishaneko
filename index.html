@@ -30,6 +30,12 @@
       href="assets/hero-requested-image.png"
       fetchpriority="high"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500&display=swap"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -321,15 +327,33 @@
         </div>
       </section>
 
-      <section id="choose" class="sec sec-alt">
+      <section id="choose" class="sec fin-sec" aria-labelledby="choose-title">
         <div class="container sec-wrap">
-          <div class="sec-head">
-            <p class="sec-eyebrow">Finishing Options</p>
-            <h2 class="sec-title">仕上げ方法を、選べます。</h2>
+          <div class="fin-head">
+            <p class="fin-overline">FINISHING</p>
+            <h2 id="choose-title" class="fin-title">ロゴの仕上げは、<wbr>二通り。</h2>
+            <p class="fin-sub phrase">社員みんなで<wbr>貼るか、<wbr>貼った<wbr>状態で<wbr>届くか。</p>
           </div>
-          <p class="sec-lead">
-            <span class="sentence">ロゴを<wbr>自分たちで<wbr>貼るのが<wbr>会社猫の<wbr>定番です。</span><br class="br-pc" /><span class="sentence">届いて<wbr>すぐに<wbr>飾りたい<wbr>場合は、<wbr>ロゴを<wbr>貼った<wbr>状態でも<wbr>お届けします。</span>
-          </p>
+          <div class="fin-options">
+            <div class="fin-option is-default">
+              <p class="fin-num-row"><span class="fin-num">01</span><span class="fin-label">定番・おすすめ</span></p>
+              <h3 class="fin-name">自分たちで貼る</h3>
+              <p class="fin-desc phrase"><span class="nowrap">ロゴシール</span>を<wbr>同梱。<wbr>社員みんなで<wbr>願いを<wbr>込めて、<wbr>最後の<wbr>ひと手間で<wbr>完成させます。</p>
+              <dl class="fin-spec">
+                <div><dt>届く状態</dt><dd class="phrase">ロゴなし＋<wbr><span class="nowrap">ロゴシール</span>同梱</dd></div>
+                <div><dt>こんな方に</dt><dd class="phrase">自社に<wbr>飾る／<wbr><span class="nowrap">キックオフ</span>・<wbr>周年の<wbr>行事に</dd></div>
+              </dl>
+            </div>
+            <div class="fin-option">
+              <p class="fin-num-row"><span class="fin-num">02</span><span class="fin-label">すぐ飾れる</span></p>
+              <h3 class="fin-name">貼り付け済みでお届け</h3>
+              <p class="fin-desc phrase">工房で<wbr>ロゴを<wbr>貼った<wbr>状態で<wbr>お届け。<wbr>箱を<wbr>開けたら、<wbr>そのまま<wbr>飾れます。</p>
+              <dl class="fin-spec">
+                <div><dt>届く状態</dt><dd>ロゴ貼り付け済み</dd></div>
+                <div><dt>こんな方に</dt><dd class="phrase">取引先への<wbr>お祝い／<wbr>受付に<wbr>すぐ<wbr>飾りたい</dd></div>
+              </dl>
+            </div>
+          </div>
           <div class="choose-grid" data-layout="stacked">
             <article class="choose-card is-default">
               <figure class="choose-photo" style="--photo-pos-sp: 50% 62%">
@@ -547,6 +571,42 @@
         </div>
       </section>
 
+      <section id="finish-process" class="sec fin-sec" aria-labelledby="process-title">
+        <div class="container sec-wrap">
+          <div class="fin-head">
+            <p class="fin-overline">PROCESS</p>
+            <h2 id="process-title" class="fin-title">ロゴを貼るのは、<wbr><span class="fin-accent">みなさん</span>か、<wbr><span class="fin-accent">工房</span>か。</h2>
+            <p class="fin-sub phrase">違いは<wbr>『ロゴを<wbr>貼る<wbr>工程』<wbr>だけです。</p>
+          </div>
+          <div class="process-rows">
+            <div class="process-row">
+              <div class="process-head">
+                <p class="fin-label">定番・おすすめ</p>
+                <p class="process-name">自分たちで貼る</p>
+              </div>
+              <ol class="process-steps">
+                <li><span class="process-dot">1</span><span class="process-text">工房で<br />焼き上げ</span></li>
+                <li><span class="process-dot">2</span><span class="process-text">お届け<br />（シール同梱）</span></li>
+                <li class="is-logo"><span class="process-dot">3</span><span class="process-text">みんなで<br />ロゴを貼る</span></li>
+                <li class="is-final"><span class="process-dot">4</span><span class="process-text">完成・飾る</span></li>
+              </ol>
+            </div>
+            <div class="process-row">
+              <div class="process-head">
+                <p class="fin-label">すぐ飾れる</p>
+                <p class="process-name">貼り付け済みでお届け</p>
+              </div>
+              <ol class="process-steps">
+                <li><span class="process-dot">1</span><span class="process-text">工房で<br />焼き上げ</span></li>
+                <li class="is-logo"><span class="process-dot">2</span><span class="process-text">工房で<br />ロゴを貼る</span></li>
+                <li><span class="process-dot">3</span><span class="process-text">お届け</span></li>
+                <li class="is-final"><span class="process-dot">4</span><span class="process-text">開けて<br />すぐ飾る</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="flow" class="sec">
         <div class="container sec-wrap">
           <div class="sec-head">
@@ -710,6 +770,51 @@
           <p class="contact-note phrase">
             会社猫に<wbr>関する<wbr>ご注文・<wbr>お問い合わせは、<wbr>運営会社 <span class="nowrap">UNPROLOGUE株式会社</span><wbr>（<span class="nowrap">hello@unprologue.jp</span>）が<wbr>承ります。<wbr>製作元の<wbr>宮創製陶所では<wbr>受け付けて<wbr>おりませんので、<wbr>ご了承ください。
           </p>
+        </div>
+      </section>
+
+      <section id="compare" class="sec fin-sec" aria-labelledby="compare-title">
+        <div class="container sec-wrap">
+          <div class="compare-head">
+            <div>
+              <p class="fin-overline">COMPARE</p>
+              <h2 id="compare-title" class="fin-title">仕上げ方法を選ぶ</h2>
+            </div>
+            <p class="fin-sub">ロゴを貼る<wbr>タイミングが<wbr>違います</p>
+          </div>
+          <div class="compare-scroll">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <td></td>
+                  <th scope="col"><span class="compare-pill is-filled">定番・おすすめ</span><span class="compare-name">自分たちで貼る</span></th>
+                  <th scope="col"><span class="compare-pill">すぐ飾れる</span><span class="compare-name">貼り付け済みで<wbr>お届け</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="is-accent">
+                  <th scope="row">ロゴを貼るのは</th>
+                  <td>みなさん<wbr>（社員みんなで）</td>
+                  <td>工房<wbr>（お届け前に）</td>
+                </tr>
+                <tr>
+                  <th scope="row">届く状態</th>
+                  <td class="phrase">ロゴなし＋<wbr><span class="nowrap">ロゴシール</span>・<wbr>説明書を<wbr>同梱</td>
+                  <td class="phrase">ロゴ<wbr>貼り付け済み<wbr>（開けて<wbr>すぐ<wbr>飾れる）</td>
+                </tr>
+                <tr>
+                  <th scope="row">向いている方</th>
+                  <td class="phrase">自社に<wbr>飾る／<wbr><span class="nowrap">キックオフ</span>・<wbr>周年の<wbr>行事に</td>
+                  <td class="phrase">取引先への<wbr>お祝い／<wbr>受付に<wbr>すぐ<wbr>飾りたい</td>
+                </tr>
+                <tr>
+                  <th scope="row">価格</th>
+                  <td>[同額 or 価格]</td>
+                  <td>[同額 or 価格]</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
