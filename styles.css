@@ -3424,25 +3424,48 @@ h3 {
 }
 
 .color-card {
+  position: relative;
   display: grid;
   justify-items: center;
   gap: 16px;
-  padding: 24px 16px 16px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--surface);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 16px 8px 8px;
+  transition: transform 0.3s ease;
 }
 
 .color-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(46, 45, 42, 0.08);
 }
 
 .color-card img {
+  position: relative;
+  z-index: 1;
   display: block;
-  width: min(100%, 136px);
+  width: 100%;
   height: auto;
+}
+
+.color-cat {
+  width: min(100%, 136px);
+}
+
+/* soft oval shadow at the feet */
+.color-cat::after,
+.size-stage::after {
+  content: "";
+  position: absolute;
+  height: 14px;
+  background: radial-gradient(closest-side, rgba(30, 26, 21, 0.12), transparent);
+}
+
+.color-cat {
+  position: relative;
+  display: block;
+}
+
+.color-cat::after {
+  left: 10%;
+  right: 10%;
+  bottom: -7px;
 }
 
 .color-name {
@@ -3494,13 +3517,25 @@ h3 {
 
 .size-stage {
   --stage-h: min(var(--stage), 150cqw);
-  width: 100%;
+  position: relative;
+  width: calc(100% + 16px);
   height: var(--stage-h);
-  margin-bottom: 8px;
+  margin: 0 -8px 8px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   border-bottom: 1px solid var(--line);
+}
+
+.size-stage img {
+  position: relative;
+  z-index: 1;
+}
+
+.size-stage::after {
+  left: 25%;
+  right: 25%;
+  bottom: -7px;
 }
 
 .size-stage img {
@@ -3562,7 +3597,7 @@ h3 {
   padding: 16px 12px 12px;
 }
 
-.variation-col .color-card img {
+.variation-col .color-cat {
   width: min(100%, 96px);
 }
 
@@ -5043,7 +5078,7 @@ a.trust-pill:hover {
   color: var(--fin-sub);
 }
 
-/* ---------- A: FINISHING (diagram first) ---------- */
+/* ---------- A: FINISHING (photos as part of the layout) ---------- */
 #choose > .container,
 #finish-process > .container {
   width: min(1100px, 94vw);
@@ -5051,7 +5086,9 @@ a.trust-pill:hover {
 
 #choose,
 #finish-process {
+  --bleed: calc((min(1100px, 94vw) - 100vw) / 2);
   padding-block: 96px;
+  overflow-x: clip;
 }
 
 .fin-overline {
@@ -5069,52 +5106,106 @@ a.trust-pill:hover {
   color: var(--fin-accent);
 }
 
-/* line art: 1.4px strokes, round ends, no fill */
-.fin-svg,
-.process-dot svg {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 .fin-options {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+  align-items: center;
   column-gap: 56px;
-  margin-top: 8px;
+  margin-top: 16px;
 }
 
 .fin-divider {
+  align-self: stretch;
   background: var(--fin-rule);
 }
 
 .fin-option {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
-  gap: 10px;
-  text-align: center;
+  column-gap: 64px;
   min-width: 0;
 }
 
-.fin-visual {
+.fin-text {
   position: relative;
-  display: grid;
-  place-items: center;
-  width: 100%;
-  height: 220px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  background: #ebe3d6;
-  color: var(--fin-text);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
 }
 
-.fin-visual .fin-num {
+/* 01: portrait photo bleeding to the left edge of the viewport */
+/* the column holds 200px of the photo; the bleed adds the rest out to the viewport edge */
+.fin-option-01 {
+  grid-template-columns: 200px minmax(0, 1fr);
+}
+
+.fin-photo {
+  margin: 0;
+  overflow: hidden;
+}
+
+.fin-photo-bleed-left {
+  margin-left: var(--bleed);
+  aspect-ratio: 3 / 4;
+}
+
+.fin-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fin-option-01 .fin-name {
+  position: relative;
+  z-index: 1;
+  margin-left: -88px;
+  padding-left: 24px;
+  background: linear-gradient(90deg, transparent 0 24px, var(--fin-bg) 24px);
+}
+
+/* 02: cut-out cat standing on the page, bleeding a little to the right */
+.fin-option-02 {
+  grid-template-columns: minmax(0, 1fr) 280px;
+}
+
+.fin-cutout {
+  position: relative;
+  margin: 0 max(-48px, var(--bleed)) 0 0;
+  padding-top: 40px;
+}
+
+.fin-cutout img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.fin-cutout::after {
+  content: "";
   position: absolute;
-  top: 14px;
-  left: 18px;
+  left: 6%;
+  right: 6%;
+  bottom: -10px;
+  height: 28px;
+  background: radial-gradient(closest-side, rgba(30, 26, 21, 0.12), transparent);
+}
+
+.fin-bignum {
+  position: absolute;
+  top: -10px;
+  left: -30px;
+  z-index: 0;
+  font-family: var(--fin-num);
+  font-size: 160px;
+  line-height: 1;
+  color: #e3dacb;
+  font-variant-numeric: lining-nums;
 }
 
 .fin-num {
@@ -5123,21 +5214,6 @@ a.trust-pill:hover {
   font-weight: 400;
   line-height: 1;
   color: var(--fin-label);
-}
-
-.fin-svg {
-  width: 200px;
-  max-width: 100%;
-  height: auto;
-}
-
-.fin-svg .fin-hl {
-  stroke: var(--fin-accent);
-}
-
-.fin-svg .fin-fill {
-  fill: var(--fin-accent);
-  stroke: var(--fin-accent);
 }
 
 .fin-option .fin-label {
@@ -5159,6 +5235,7 @@ a.trust-pill:hover {
   line-height: 1.5;
   letter-spacing: 0.06em;
   color: var(--fin-text);
+  word-break: keep-all;
 }
 
 .fin-line {
@@ -5177,7 +5254,6 @@ a.trust-pill:hover {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 8px;
 }
 
@@ -5194,125 +5270,133 @@ a.trust-pill:hover {
   white-space: nowrap;
 }
 
-/* ---------- B: PROCESS (pictogram steps) ---------- */
-.process-rows {
-  margin-top: 8px;
+/* ---------- B: PROCESS (one photo band across the page) ---------- */
+.process-band {
+  margin-inline: var(--bleed);
+  margin-top: 16px;
 }
 
-.process-row {
-  display: grid;
-  grid-template-columns: 170px minmax(0, 1fr);
-  align-items: center;
-  gap: 24px;
-  padding: 26px 0;
-  border-top: 1px solid var(--fin-rule);
-}
-
-.process-row:last-child {
-  border-bottom: 1px solid var(--fin-rule);
-}
-
-.process-head {
-  display: grid;
-  gap: 6px;
-}
-
-.process-kicker {
-  margin: 0;
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  color: var(--fin-sub);
-  white-space: nowrap;
-}
-
-.process-row.is-default .process-kicker {
-  color: var(--fin-accent);
-}
-
-.process-name {
-  margin: 0;
-  word-break: keep-all;
-  font-family: var(--fin-serif);
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--fin-text);
-}
-
-.process-steps {
+.process-strip,
+.process-labels {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-}
-
-.process-steps li:not(.line) {
-  flex: 0 0 110px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-/* joins the circles at their centre height */
-.process-steps .line {
-  flex: 1;
-  min-width: 12px;
-  height: 1px;
-  margin-bottom: 28px;
-  background: #c9bfae;
-}
-
-.process-dot {
   display: grid;
-  place-items: center;
-  width: 64px;
-  height: 64px;
-  border: 1px solid #c9bfae;
-  border-radius: 50%;
-  background: #fff;
-  color: var(--fin-text);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
 }
 
-.process-text {
+.process-strip {
+  height: 180px;
+  background: var(--fin-bg);
+}
+
+.process-strip li {
+  overflow: hidden;
+}
+
+.process-strip img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.75);
+  transition: filter 0.3s ease;
+}
+
+.process-strip li:hover img {
+  filter: saturate(1);
+}
+
+.process-labels li {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding-top: 14px;
   font-size: 11px;
-  line-height: 1.6;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   color: var(--fin-sub);
   white-space: nowrap;
 }
 
-.process-steps li.is-logo .process-dot {
-  border-color: var(--fin-accent);
-  background: var(--fin-accent);
-  color: #fff;
+.process-label-dot,
+.route-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9bfae;
 }
 
-.process-steps li.is-logo .process-text {
-  font-weight: 700;
+.process-labels li.is-apply {
   color: var(--fin-accent);
 }
 
-.process-steps li.is-final .process-dot {
-  border-color: var(--fin-text);
+.process-labels li.is-apply .process-label-dot,
+.route-dot.is-apply {
+  background: var(--fin-accent);
+}
+
+.route-dot.is-final {
   background: var(--fin-text);
-  color: #fff;
 }
 
-.process-steps li.is-final .process-text {
-  color: var(--fin-text);
+.process-routes {
+  display: grid;
+  gap: 4px;
+  margin-top: 18px;
 }
 
-@media (max-width: 1023px) {
-  .process-steps li:not(.line) {
-    flex-basis: 84px;
+.process-route-name {
+  margin: 0;
+  padding-left: calc(-1 * var(--bleed));
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--fin-sub);
+}
+
+.process-route-track {
+  position: relative;
+  height: 40px;
+}
+
+.process-route-track svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.process-route-track path {
+  fill: none;
+  stroke: #c9bfae;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.route-dot {
+  position: absolute;
+  top: 26px;
+  left: var(--x);
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1024px) {
+  /* stack the two options so each keeps room for its photo and text */
+  .fin-options {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 48px;
+  }
+
+  .fin-divider {
+    height: 1px;
   }
 }
 
 @media (max-width: 767px) {
   #choose,
   #finish-process {
+    --bleed: -10px;
     padding-block: 64px;
   }
 
@@ -5320,43 +5404,43 @@ a.trust-pill:hover {
     font-size: 24px;
   }
 
-  /* A: one column, the vertical rule becomes a horizontal one */
-  .fin-options {
+  .fin-option-01,
+  .fin-option-02 {
     grid-template-columns: minmax(0, 1fr);
-    row-gap: 32px;
+    row-gap: 20px;
   }
 
-  .fin-divider {
-    height: 1px;
+  .fin-photo-bleed-left {
+    margin-inline: var(--bleed);
+    aspect-ratio: auto;
+    height: min(56vw, 240px);
   }
 
-  /* B: vertical steps, circle on the left and label on the right */
-  .process-row {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
+  .fin-option-01 .fin-name {
+    margin-left: 0;
+    padding-left: 0;
+    background: none;
   }
 
-  .process-steps {
-    flex-direction: column;
-    align-items: stretch;
+  .fin-option-02 .fin-cutout {
+    order: -1;
+    width: min(64vw, 260px);
+    margin: 0 auto;
+    padding-top: 24px;
   }
 
-  .process-steps li:not(.line) {
-    flex: none;
-    flex-direction: row;
-    gap: 16px;
+  .fin-bignum {
+    font-size: 110px;
+    left: -24px;
   }
 
-  .process-steps .line {
-    flex: none;
-    width: 1px;
-    height: 18px;
-    min-width: 0;
-    margin: 0 0 0 32px;
+  .process-strip {
+    height: 120px;
   }
 
-  .process-text {
-    font-size: 12px;
+  .process-labels li {
+    font-size: 10px;
+    letter-spacing: 0.04em;
   }
 }
 
