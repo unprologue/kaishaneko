@@ -4379,6 +4379,18 @@ body.is-scrolled .to-top {
   transform: rotate(45deg);
 }
 
+/* Below 1024px the photo spans the card: show it at its own 16:9 shape, no height cap */
+@media (max-width: 1023px) {
+  .choose-photo {
+    aspect-ratio: 16 / 9;
+    max-height: none;
+  }
+
+  .choose-photo img {
+    object-position: var(--photo-pos-sp, var(--photo-pos, 50% 50%));
+  }
+}
+
 @media (min-width: 1024px) {
   .choose-grid[data-layout="stacked"] .choose-card {
     flex-direction: row;
@@ -4410,13 +4422,6 @@ body.is-scrolled .to-top {
     padding: 24px;
   }
 
-  .choose-photo {
-    aspect-ratio: 16 / 9;
-  }
-
-  .choose-photo img {
-    object-position: var(--photo-pos-sp, var(--photo-pos, 50% 50%));
-  }
 }
 
 /* Case gift note */
