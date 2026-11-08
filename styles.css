@@ -3831,38 +3831,6 @@ body.is-scrolled .to-top {
     max-width: 22rem;
   }
 
-  .sticky-order {
-    display: block;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 25;
-    padding: 0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom, 0px));
-    background: rgba(247, 246, 242, 0.94);
-    border-top: 1px solid var(--line);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    transform: translateY(110%);
-    transition: transform 260ms ease;
-  }
-
-  .sticky-order .btn {
-    width: 100%;
-    max-width: none;
-  }
-
-  body.is-past-hero .sticky-order {
-    transform: none;
-  }
-
-  body.is-past-hero .to-top {
-    bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
-  }
-
-  body.is-past-hero .site-footer {
-    padding-bottom: 6rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -4815,7 +4783,7 @@ a.trust-pill:hover {
   --fin-bg: #f4efe6;
   --fin-text: #1e1a15;
   --fin-sub: #6f655a;
-  --fin-label: #9a8468;
+  --fin-label: #7a6a52; /* was #9a8468: too light for 11–12px text */
   --fin-rule: #d6cbb8;
   --fin-accent: #b5362c;
   --fin-serif: var(--font-serif-jp);
@@ -5644,7 +5612,7 @@ a.trust-pill:hover {
   font-family: var(--font-num);
   font-size: 12px;
   letter-spacing: 0.3em;
-  color: #9a8468;
+  color: #7a6a52;
 }
 
 .exp-title {
@@ -5846,3 +5814,267 @@ a.trust-pill:hover {
   }
 }
 
+/* ---------- Gallery: real cases ---------- */
+.case-list {
+  display: grid;
+  gap: 64px;
+}
+
+.case-item {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 56px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid #e3dacb;
+}
+
+.case-item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* main photo: cut-out standing on the page with a soft shadow */
+.case-main {
+  position: relative;
+  margin: 0;
+  padding-bottom: 12px;
+}
+
+.case-main img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.case-main::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 4px;
+  height: 24px;
+  background: radial-gradient(closest-side, rgba(30, 26, 21, 0.14), transparent);
+}
+
+.case-body {
+  display: grid;
+  gap: 12px;
+}
+
+.case-name {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.case-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: #4a423a;
+}
+
+.case-meta {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* three small views, separated only by 1px rules */
+.case-thumbs {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid #e3dacb;
+}
+
+.case-thumbs li + li {
+  border-left: 1px solid #e3dacb;
+}
+
+.case-thumb {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.case-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+.case-thumb:hover img {
+  opacity: 0.85;
+}
+
+.gallery-next {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.gallery-next a {
+  margin-left: 0.6em;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* lightbox */
+.lightbox {
+  max-width: min(92vw, 900px);
+  max-height: 92vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.lightbox::backdrop {
+  background: rgba(30, 26, 21, 0.82);
+}
+
+.lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: 88vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* pricing: back-calculated order date */
+.lead-time-note {
+  margin: -8px 0 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #6f655a;
+}
+
+/* footer: order / estimate buttons and policy links */
+.footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-actions .btn {
+  min-width: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+@media (max-width: 767px) {
+  .case-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding-bottom: 48px;
+  }
+
+  .case-list {
+    gap: 48px;
+  }
+
+  .case-main img {
+    max-height: 300px;
+  }
+
+  .footer-actions .btn {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Phone bar: order / consult, shown once the hero has scrolled away */
+@media (max-width: 767px) {
+  .sticky-order {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 25;
+    height: calc(56px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: #1e1a15;
+    transform: translateY(110%);
+    transition: transform 260ms ease;
+  }
+
+  .sticky-order a {
+    display: grid;
+    place-items: center;
+    height: 56px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+  }
+
+  .sticky-order-main {
+    flex: 0 0 60%;
+  }
+
+  .sticky-order-sub {
+    flex: 1;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  body.is-past-hero .sticky-order {
+    transform: none;
+  }
+
+  body.is-past-hero .to-top {
+    bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* keep the end of the page clear of the 56px bar */
+  body.is-past-hero .site-footer {
+    padding-bottom: calc(56px + 1.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* footer is dark: light versions of the two buttons */
+.site-footer .footer-actions .btn-primary {
+  background: #f4efe6;
+  border-color: #f4efe6;
+  color: #1e1a15;
+}
+
+.site-footer .footer-actions .btn-outline {
+  border-color: rgba(244, 239, 230, 0.7);
+  color: #f4efe6;
+}

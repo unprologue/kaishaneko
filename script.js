@@ -116,3 +116,32 @@ const fitPcScaledSections = () => {
 };
 fitPcScaledSections();
 window.addEventListener("resize", fitPcScaledSections);
+
+// Order / estimate links: change the URLs here only. Every link marked
+// data-order-link / data-estimate-link in index.html takes its href from these.
+const ORDER_URL = "https://mp1vnh-e3.myshopify.com";
+const ESTIMATE_URL = "mailto:hello@unprologue.jp?subject=" + encodeURIComponent("会社猫のお見積り・ご相談");
+document.querySelectorAll("[data-order-link]").forEach((a) => {
+  a.href = ORDER_URL;
+});
+document.querySelectorAll("[data-estimate-link]").forEach((a) => {
+  a.href = ESTIMATE_URL;
+});
+
+// Gallery: enlarge the small case photos in a <dialog>.
+const lightbox = document.getElementById("lightbox");
+if (lightbox && typeof lightbox.showModal === "function") {
+  const lightboxImg = lightbox.querySelector("img");
+  document.querySelectorAll(".case-thumb").forEach((button) => {
+    button.addEventListener("click", () => {
+      lightboxImg.src = button.dataset.full;
+      lightboxImg.alt = button.dataset.alt || "";
+      lightbox.showModal();
+    });
+  });
+  lightbox.querySelector(".lightbox-close").addEventListener("click", () => lightbox.close());
+  // a click on the backdrop (outside the photo) closes it
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+}
