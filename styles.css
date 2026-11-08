@@ -6078,3 +6078,149 @@ a.trust-pill:hover {
   border-color: rgba(244, 239, 230, 0.7);
   color: #f4efe6;
 }
+
+/* ==========================================================
+   Document pages: 特定商取引法 / プライバシーポリシー / 会社概要
+   ========================================================== */
+.doc-body {
+  background: #f4efe6;
+}
+
+.doc-main {
+  padding: 48px 0 96px;
+  text-transform: none;
+}
+
+.doc-wrap {
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+  font-family: var(--font-sans-jp);
+  font-size: 15px;
+  line-height: 1.9;
+  color: #1e1a15;
+}
+
+.doc-wrap a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.breadcrumb {
+  margin-bottom: 24px;
+  font-size: 12px;
+  color: #6f655a;
+}
+
+.doc-title {
+  margin: 0 0 40px;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  font-family: var(--font-serif-jp);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+}
+
+.doc-h2 {
+  margin: 48px 0 16px;
+  font-family: var(--font-serif-jp);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.doc-wrap p {
+  margin: 0 0 16px;
+}
+
+.doc-list {
+  margin: 0 0 16px;
+  padding-left: 1.4em;
+}
+
+.doc-table {
+  width: 100%;
+  margin: 8px 0 24px;
+  border-collapse: collapse;
+  border-top: 1px solid #e3dacb;
+}
+
+.doc-table th,
+.doc-table td {
+  padding: 16px 16px 16px 0;
+  border-bottom: 1px solid #e3dacb;
+  text-align: left;
+  vertical-align: top;
+}
+
+.doc-table tbody th {
+  width: 200px;
+  font-weight: 500;
+}
+
+.doc-table-3 thead th {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6f655a;
+}
+
+.doc-table-3 tbody th {
+  width: auto;
+}
+
+.doc-sign,
+.doc-updated {
+  margin-top: 40px;
+  font-size: 13px;
+  color: #6f655a;
+}
+
+/* phones: each row becomes "label above, content below" */
+@media (max-width: 767px) {
+  .doc-main {
+    padding-top: 40px;
+  }
+
+  .doc-table,
+  .doc-table tbody,
+  .doc-table tr,
+  .doc-table th,
+  .doc-table td {
+    display: block;
+    width: auto;
+  }
+
+  .doc-table thead {
+    display: none;
+  }
+
+  .doc-table tr {
+    padding: 14px 0;
+    border-bottom: 1px solid #e3dacb;
+  }
+
+  .doc-table th,
+  .doc-table td {
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  .doc-table tbody th {
+    width: auto;
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: #6f655a;
+  }
+
+  .doc-table-3 tbody th {
+    font-size: 15px;
+    color: #1e1a15;
+  }
+
+  .doc-table-3 td::before {
+    content: attr(data-label) "：";
+    color: #6f655a;
+    font-size: 13px;
+  }
+}
