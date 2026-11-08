@@ -6238,3 +6238,16 @@ a.trust-pill:hover {
   font-size: 0.9em;
   color: var(--muted);
 }
+
+/* "高さ" before the cm value: smaller and lighter so the size letter and number lead */
+.size-name .size-label {
+  margin: 0 0.3em 0 0;
+  font-size: 0.78em;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.size-name > span {
+  white-space: nowrap;
+}

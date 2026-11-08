@@ -1,7 +1,7 @@
 """Regenerate the JSON-LD (Product + FAQPage) in index.html from the page itself.
 
 FAQ entries come from the <details class="faq-item"> blocks. Answers that still contain
-a "[要確認" placeholder are left out so unconfirmed text never reaches search results.
+a "[...]" placeholder are left out so unconfirmed text never reaches search results.
 Run after editing the FAQ or prices: python3 tools/build-jsonld.py
 """
 import html
@@ -26,7 +26,7 @@ for q, a in re.findall(r'<details class="faq-item"[^>]*>\s*<summary[^>]*>(.*?)<s
     q, a = text(q), text(a)
     q = re.sub(r"^Q\.\s*", "", q)
     a = re.sub(r"^A\.\s*", "", a)
-    if "[要確認" in a:
+    if re.search(r"\[[^\]]+\]", a):  # unfilled placeholder
         continue
     faq.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}})
 
