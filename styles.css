@@ -3213,20 +3213,6 @@ h3 {
   line-height: 1.7;
 }
 
-/* Experience */
-.experience-photo {
-  margin: 0 auto;
-  width: min(720px, 100%);
-}
-
-.experience-photo img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 16px 38px rgba(46, 45, 42, 0.08);
-}
-
 /* Flow */
 .flow-grid {
   list-style: none;
@@ -5602,3 +5588,130 @@ a.trust-pill:hover {
 #choose {
   padding-bottom: 48px;
 }
+
+/* Experience: text beside the watercolour illustration, no frame */
+.exp-sec {
+  --fin-bg: #f4efe6;
+  position: relative;
+  padding-block: 96px;
+  background: var(--fin-bg);
+  overflow: hidden;
+}
+
+/* two faint washes instead of the card's watercolour stains */
+.exp-sec::before,
+.exp-sec::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.exp-sec::before {
+  top: -120px;
+  left: -140px;
+  width: 420px;
+  height: 360px;
+  background: radial-gradient(closest-side, rgba(214, 190, 160, 0.28), transparent);
+}
+
+.exp-sec::after {
+  right: -120px;
+  bottom: -140px;
+  width: 380px;
+  height: 340px;
+  background: radial-gradient(closest-side, rgba(214, 190, 160, 0.2), transparent);
+}
+
+.exp-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+  align-items: center;
+  gap: 64px;
+}
+
+.exp-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.exp-overline {
+  margin: 0;
+  font-family: var(--font-num);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: #9a8468;
+}
+
+.exp-title {
+  margin: 0;
+  font-family: var(--font-serif-jp);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  color: #1e1a15;
+}
+
+.exp-body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #4a423a;
+}
+
+.exp-link {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #1e1a15;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.exp-illust {
+  margin: 0;
+}
+
+.exp-illust img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  /* closest-side so the fade reaches zero at every edge, not only at the corners */
+  -webkit-mask-image: radial-gradient(closest-side ellipse at center, #000 60%, transparent 100%);
+  mask-image: radial-gradient(closest-side ellipse at center, #000 60%, transparent 100%);
+}
+
+@media (max-width: 1100px) {
+  .exp-title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 767px) {
+  .exp-sec {
+    padding-block: 64px;
+  }
+
+  .exp-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .exp-illust {
+    order: -1;
+    margin-inline: calc(50% - 50vw);
+  }
+
+  .exp-title {
+    font-size: 24px;
+  }
+}
+
