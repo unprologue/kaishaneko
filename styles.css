@@ -5703,7 +5703,17 @@ a.trust-pill:hover {
 
 /* XS would be too small at 6:30; keep it visible */
 .size-stage img {
-  min-height: 56px;
+  min-height: 60px;
+}
+
+/* one line on how each size is modelled, above the use */
+.size-feature {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--text);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .size-use {
@@ -5755,7 +5765,7 @@ a.trust-pill:hover {
     container-type: normal;
     display: grid;
     grid-template-columns: 128px minmax(0, 1fr);
-    grid-template-rows: 1fr auto auto auto 1fr;
+    grid-template-rows: 1fr auto auto auto auto 1fr;
     column-gap: 20px;
     padding: 20px 0;
     border-bottom: 1px solid #e3dacb;
@@ -5800,9 +5810,16 @@ a.trust-pill:hover {
     font-size: 20px;
   }
 
-  .variation-col .size-use {
+  .size-feature {
     grid-column: 2;
     grid-row: 4;
+    margin-top: 6px;
+    font-size: 13px;
+  }
+
+  .variation-col .size-use {
+    grid-column: 2;
+    grid-row: 5;
     margin-top: 4px;
     font-size: 13px;
     line-height: 1.6;
@@ -6250,4 +6267,16 @@ a.trust-pill:hover {
 
 .size-name > span {
   white-space: nowrap;
+}
+
+/* sizes: centre each cat vertically in its stage (no floor line) */
+.size-stage {
+  align-items: center;
+  border-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .size-stage {
+    align-self: center;
+  }
 }
