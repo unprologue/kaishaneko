@@ -6268,3 +6268,15 @@ a.trust-pill:hover {
 .size-name > span {
   white-space: nowrap;
 }
+
+/* sizes: centre each cat vertically in its stage (no floor line) */
+.size-stage {
+  align-items: center;
+  border-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .size-stage {
+    align-self: center;
+  }
+}
