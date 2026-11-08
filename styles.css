@@ -6231,3 +6231,10 @@ a.trust-pill:hover {
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
+
+.faq-answer .faq-note {
+  display: inline-block;
+  margin-top: 0.3em;
+  font-size: 0.9em;
+  color: var(--muted);
+}
