@@ -6112,6 +6112,7 @@ a.trust-pill:hover {
 }
 
 .doc-title {
+  max-width: none;
   margin: 0 0 40px;
   word-break: keep-all;
   overflow-wrap: anywhere;
