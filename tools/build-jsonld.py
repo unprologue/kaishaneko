@@ -45,10 +45,26 @@ product = {
     ],
 }
 faq_page = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq}
+organization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "UNPROLOGUE株式会社",
+    "url": "https://unprologue.jp/",
+    "email": "hello@unprologue.jp",
+    "address": {
+        "@type": "PostalAddress",
+        "postalCode": "150-0021",
+        "addressRegion": "東京都",
+        "addressLocality": "渋谷区",
+        "streetAddress": "恵比寿西二丁目8番4号 EX恵比寿西ビル5階",
+        "addressCountry": "JP",
+    },
+}
 
 block = (START + "\n"
          + '    <script type="application/ld+json">\n' + json.dumps(product, ensure_ascii=False, indent=2) + "\n    </script>\n"
          + '    <script type="application/ld+json">\n' + json.dumps(faq_page, ensure_ascii=False, indent=2) + "\n    </script>\n"
+         + '    <script type="application/ld+json">\n' + json.dumps(organization, ensure_ascii=False, indent=2) + "\n    </script>\n"
          + "    " + END)
 if START in page:
     page = re.sub(re.escape(START) + r".*?" + re.escape(END), lambda m: block, page, flags=re.S)

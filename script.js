@@ -6,7 +6,9 @@ if (yearEl) {
 
 const brandLink = document.querySelector(".brand");
 
-if (brandLink) {
+// Only the top page's in-page logo link (#home) reloads in place; on the other pages
+// the logo is a normal link back to "/".
+if (brandLink && brandLink.getAttribute("href").startsWith("#")) {
   brandLink.addEventListener("click", (event) => {
     event.preventDefault();
     window.location.assign(`${window.location.pathname}${window.location.search}`);
@@ -126,6 +128,17 @@ document.querySelectorAll("[data-order-link]").forEach((a) => {
 });
 document.querySelectorAll("[data-estimate-link]").forEach((a) => {
   a.href = ESTIMATE_URL;
+});
+
+// Policy pages: switch these to the Shopify policy URLs if those are used instead.
+const POLICY_URLS = {
+  company: "/company.html",
+  tokushoho: "/legal/tokushoho.html",
+  privacy: "/legal/privacy.html",
+};
+document.querySelectorAll("[data-policy-link]").forEach((a) => {
+  const url = POLICY_URLS[a.dataset.policyLink];
+  if (url) a.href = url;
 });
 
 // Gallery: enlarge the small case photos in a <dialog>.
