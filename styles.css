@@ -6225,3 +6225,9 @@ a.trust-pill:hover {
     font-size: 13px;
   }
 }
+
+/* links inside FAQ answers */
+.faq-answer a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
