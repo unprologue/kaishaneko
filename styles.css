@@ -6280,3 +6280,18 @@ a.trust-pill:hover {
     align-self: center;
   }
 }
+
+/* FAQ question: one flex item, Japanese-friendly wrapping, bracketed words kept whole */
+.faq-q {
+  flex: 1 1 auto;
+  min-width: 0;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 767px) {
+  /* give the question 1-2 more characters; the + button keeps its size and position */
+  #faq .faq-item summary {
+    gap: 0.4rem;
+  }
+}
