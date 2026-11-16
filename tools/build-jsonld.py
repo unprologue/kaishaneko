@@ -32,8 +32,8 @@ for q, a in re.findall(r'<details class="faq-item"[^>]*>\s*<summary[^>]*>(.*?)<s
 
 prices = re.findall(r'<tr><th scope="row">(XS|S|M|L)</th><td>(\d+)cm</td><td class="num">([\d,]+)円</td>', page)
 SITE = "https://kaishaneko.net/"
-# Offer url stays on #pricing until /order/ exists (docs/site-plan.md 8章)
-OFFER_URL = SITE + "#pricing"
+# Offer url points at the order page, which shows the same price table (docs/site-plan.md 10章)
+OFFER_URL = SITE + "order/"
 graph = {
     "@context": "https://schema.org",
     "@graph": [
