@@ -26,6 +26,7 @@ def text(fragment):
 
 def faq_entries(src):
     out = []
+    src = re.sub(r'<br />\s*<a class="faq-link"[^>]*>.*?</a>', "", src)  # in-page links, not part of the answer
     for q, a in re.findall(r'<details class="faq-item"[^>]*>\s*<summary[^>]*>(.*?)<span class="faq-icon".*?<div class="faq-answer">(.*?)</div>', src, re.S):
         q, a = text(q), text(a)
         q = re.sub(r"^Q\.\s*", "", q)
