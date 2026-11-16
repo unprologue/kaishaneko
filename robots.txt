@@ -1,0 +1,23 @@
+# 会社猫 robots.txt
+User-agent: *
+Allow: /
+
+# AI検索（回答での引用）用のクローラーは明示的に許可
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# 学習用クローラーを止める場合は、下の行の先頭の # を外す
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: ClaudeBot
+# Disallow: /
+# User-agent: Google-Extended
+# Disallow: /
+
+Sitemap: https://kaishaneko.net/sitemap.xml
