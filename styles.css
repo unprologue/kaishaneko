@@ -6325,3 +6325,235 @@ a.trust-pill:hover {
 .doc-wrap .doc-actions a {
   text-decoration: none;
 }
+
+/* ==========================================================
+   /story/ 会社猫とは
+   ========================================================== */
+.story-body {
+  background: var(--bg);
+}
+
+.story-hero {
+  padding: clamp(40px, 6vw, 72px) 0 clamp(32px, 5vw, 56px);
+  background: #f4efe6;
+  border-bottom: 1px solid var(--line);
+}
+
+.story-hero-inner {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.story-hero .breadcrumb {
+  justify-self: start;
+  margin-bottom: 8px;
+}
+
+.story-title {
+  max-width: none;
+  margin: 0;
+  font-family: var(--font-serif-jp);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: #24211d;
+}
+
+.story-lead {
+  max-width: 40rem;
+  margin: 12px auto 0;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #3d3832;
+  text-align: left;
+}
+
+.story-why {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  padding: clamp(32px, 5vw, 56px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.story-why:nth-of-type(even) .story-why-media {
+  order: -1;
+}
+
+.story-why-text {
+  display: grid;
+  gap: 14px;
+  font-size: 15px;
+  line-height: 1.95;
+  color: #3d3832;
+}
+
+.story-why-text p {
+  margin: 0;
+}
+
+.story-why-num {
+  font-family: var(--latin-font);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: #b0473f;
+}
+
+.story-why h3 {
+  margin: 0;
+  font-family: var(--font-serif-jp);
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #24211d;
+}
+
+.story-why-answer {
+  font-family: var(--font-serif-jp);
+  font-size: clamp(1.02rem, 1.6vw, 1.15rem);
+  line-height: 1.8;
+  color: #24211d;
+  padding-left: 14px;
+  border-left: 3px solid #b0473f;
+}
+
+.story-note {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.story-note a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.story-why-media {
+  display: grid;
+  justify-items: center;
+}
+
+.story-why-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.story-why-media--two {
+  gap: 12px;
+}
+
+.story-why-media .story-why-cat {
+  width: min(280px, 70%);
+  border-radius: 0;
+}
+
+.story-why-media img[src*="finishing-01"] {
+  width: min(360px, 90%);
+}
+
+.story-scene-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  counter-reset: scene;
+}
+
+.story-scene-list li {
+  counter-increment: scene;
+  display: grid;
+  grid-template-columns: 3.2rem 6rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 12px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.9;
+  color: #3d3832;
+}
+
+.story-scene-list li::before {
+  content: counter(scene, decimal-leading-zero);
+  font-family: var(--latin-font);
+  font-size: 0.9rem;
+  letter-spacing: 0.16em;
+  color: #b0473f;
+}
+
+.story-scene-list p {
+  margin: 0;
+}
+
+.story-scene-name {
+  font-family: var(--font-serif-jp);
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  color: #24211d;
+}
+
+.story-origin-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 2;
+  color: #3d3832;
+}
+
+.story-cta {
+  text-align: center;
+}
+
+.story-cta .sec-title {
+  justify-content: center;
+}
+
+.story-cta-text {
+  margin: 0;
+  color: #3d3832;
+}
+
+.story-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.sec-more {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.sec-more a {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+@media (max-width: 767px) {
+  .story-why {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .story-why:nth-of-type(even) .story-why-media {
+    order: 0;
+  }
+
+  .story-scene-list li {
+    grid-template-columns: 2.6rem minmax(0, 1fr);
+    row-gap: 2px;
+  }
+
+  .story-scene-list li > p:last-child {
+    grid-column: 2;
+  }
+
+  .story-cta-actions .btn {
+    width: 100%;
+  }
+}
