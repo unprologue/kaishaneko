@@ -6763,3 +6763,248 @@ a.trust-pill:hover {
     border-top: 1px solid var(--line);
   }
 }
+
+/* ==========================================================
+   /scenes/ 用途別ページ
+   ========================================================== */
+.scene-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+}
+
+.scene-hero-text {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+}
+
+.scene-title {
+  text-align: left;
+  line-height: 1.5;
+}
+
+.scene-lead {
+  margin: 0;
+  font-size: clamp(0.98rem, 1.5vw, 1.08rem);
+  line-height: 2;
+  color: #3d3832;
+}
+
+.scene-badges {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.scene-badges li {
+  padding: 4px 12px;
+  border: 1px solid #24211d;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: #24211d;
+  background: var(--surface);
+}
+
+.scene-hero-media img {
+  display: block;
+  width: min(420px, 100%);
+  height: auto;
+  margin-inline: auto;
+}
+
+.scene-compare-wrap {
+  overflow-x: auto;
+}
+
+.scene-compare {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.scene-compare th,
+.scene-compare td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.scene-compare thead th {
+  font-family: var(--font-serif-jp);
+  font-weight: 500;
+  color: #24211d;
+  background: #efe8dc;
+}
+
+.scene-compare tbody th {
+  width: 8em;
+  font-weight: 500;
+  color: #6f655a;
+}
+
+.scene-compare td:last-child {
+  font-weight: 500;
+  color: #24211d;
+}
+
+.scene-compare tr:last-child th,
+.scene-compare tr:last-child td {
+  border-bottom: 0;
+}
+
+.scene-figure {
+  margin: 0;
+}
+
+.scene-figure img {
+  display: block;
+  width: min(420px, 100%);
+  height: auto;
+  margin-inline: auto;
+  border-radius: 0.6rem;
+}
+
+.scene-split {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+}
+
+.scene-split-text {
+  display: grid;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #3d3832;
+}
+
+.scene-split-text p {
+  margin: 0;
+}
+
+.scene-h2 {
+  margin: 0;
+  font-family: var(--font-serif-jp);
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #24211d;
+}
+
+.scene-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 2vw, 18px);
+}
+
+.scene-steps li {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #4f4b45;
+}
+
+.scene-steps b {
+  font-family: var(--font-serif-jp);
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #24211d;
+}
+
+.scene-center {
+  margin: 0;
+  text-align: center;
+  font-size: 0.98rem;
+  line-height: 2;
+  color: #3d3832;
+}
+
+.scene-note {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.case-more {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+}
+
+.case-more a {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+@media (max-width: 767px) {
+  .scene-hero-inner,
+  .scene-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .scene-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .scene-compare th,
+  .scene-compare td {
+    padding: 12px 10px;
+    font-size: 0.86rem;
+  }
+
+  .scene-compare tbody th {
+    width: 5.5em;
+  }
+
+  .scene-center {
+    text-align: left;
+  }
+}
+
+.scene-compare th,
+.scene-compare td {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.scene-compare tbody th {
+  white-space: nowrap;
+}
+
+.scene-compare {
+  table-layout: fixed;
+}
+
+.scene-compare thead th:first-child,
+.scene-compare tbody th {
+  width: 22%;
+}
+
+.scene-compare thead th:nth-child(2) {
+  width: 33%;
+}
+
+@media (max-width: 767px) {
+  .scene-compare tbody th {
+    white-space: normal;
+  }
+}
