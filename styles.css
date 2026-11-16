@@ -7074,3 +7074,77 @@ a.trust-pill:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* /kutani/ 九谷焼とつくり手 */
+.kutani-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.4vw, 28px);
+}
+
+.kutani-step {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: #4f4b45;
+}
+
+.kutani-step img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 0.6rem;
+}
+
+.kutani-step-num {
+  margin: 6px 0 0;
+  font-family: var(--latin-font);
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  color: #b0473f;
+}
+
+.kutani-step h3 {
+  margin: 0;
+  font-family: var(--font-serif-jp);
+  font-size: 1.12rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #24211d;
+}
+
+.kutani-step p {
+  margin: 0;
+}
+
+.kutani-line tbody th {
+  width: 5em;
+}
+
+@media (max-width: 1023px) {
+  .kutani-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* phone header: 4 nav links in an even 2 x 2 grid */
+@media (max-width: 767px) {
+  .site-header .main-nav {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    column-gap: 28px;
+    row-gap: 6px;
+  }
+
+  .site-header .main-nav a {
+    text-align: center;
+  }
+}

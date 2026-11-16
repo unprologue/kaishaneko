@@ -6,7 +6,7 @@ const path = require("path");
 const crypto = require("crypto");
 
 const root = path.join(__dirname, "..");
-const pages = ["index.html", "company.html", "legal/tokushoho.html", "legal/privacy.html", "404.html", "story/index.html", "order/index.html", "faq/index.html", "scenes/opening/index.html", "scenes/relocation/index.html", "scenes/anniversary/index.html", "scenes/reception/index.html"]
+const pages = ["index.html", "company.html", "legal/tokushoho.html", "legal/privacy.html", "404.html", "story/index.html", "kutani/index.html", "order/index.html", "faq/index.html", "scenes/opening/index.html", "scenes/relocation/index.html", "scenes/anniversary/index.html", "scenes/reception/index.html"]
   .map((page) => path.join(root, page))
   .filter((page) => fs.existsSync(page));
 
