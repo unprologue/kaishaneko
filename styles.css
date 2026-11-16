@@ -7008,3 +7008,69 @@ a.trust-pill:hover {
     white-space: normal;
   }
 }
+
+.scene-related {
+  padding-block: clamp(28px, 4vw, 44px);
+  border-top: 1px solid var(--line);
+}
+
+.scene-related-title {
+  margin: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  color: #6f655a;
+}
+
+.scene-related [aria-current="page"] {
+  text-decoration: none;
+  font-weight: 600;
+  color: #24211d;
+}
+
+.scene-places {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 2vw, 16px);
+}
+
+.scene-places li {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+}
+
+.scene-places b {
+  font-family: var(--font-serif-jp);
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #24211d;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.scene-place-size {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: #6f655a;
+}
+
+.scene-place-price {
+  font-family: var(--font-serif-jp);
+  font-size: 1.15rem;
+  color: #24211d;
+}
+
+@media (max-width: 1023px) {
+  .scene-places {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
