@@ -1,0 +1,7 @@
+# GitHub Pages（Jekyll）の設定
+# exclude に書いたファイルとフォルダは、kaishaneko.net には公開されない。
+# 「.」で始まるフォルダ（.claude など）は、書かなくても公開されない。
+# 社内用のファイルを足したときは、ここにも追加する。
+exclude:
+  - CLAUDE.md
+  - docs/
