@@ -7239,3 +7239,28 @@ a.trust-pill:hover {
     font-size: 1.2rem;
   }
 }
+
+/* footer: links to every page, above the legal links */
+.footer-site {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(246, 239, 226, 0.18);
+}
+
+.footer-site a {
+  font-size: 0.85rem;
+  color: #f6efe2;
+  text-decoration: none;
+}
+
+.footer-site a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.footer-links {
+  flex-basis: 100%;
+}
