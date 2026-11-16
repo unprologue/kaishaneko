@@ -297,8 +297,8 @@
 ## 10. このあとの進め方
 
 ### 進み具合（2026-11-16 時点）
-- 公開済み：フェーズ1の全項目、/story/、/kutani/、/order/、/faq/、/logo-guide/、/scenes/opening/、/scenes/relocation/、/scenes/anniversary/、/scenes/reception/、トップの並び替え、ページごとのOGP画像（/ogp/）
-- 材料待ち：/lineup/（6色の意味・上げている手）、/contact/（フォームのサービス）、/scenes/logo-ceremony/（所要時間など）、/works/（掲載許諾）、FAQ追加3問（耐久性・飾り方・シールでも九谷焼か）、用途別ページの直送・立札の文字・のし、/kutani/ の焼成・色付けの工程
+- 公開済み：フェーズ1の全項目、/contact/（メール。フォームはサービスが決まってから）、/story/、/kutani/、/order/、/faq/、/logo-guide/、/scenes/opening/、/scenes/relocation/、/scenes/anniversary/、/scenes/reception/、トップの並び替え、ページごとのOGP画像（/ogp/）
+- 材料待ち：/lineup/（6色の意味・上げている手）、/scenes/logo-ceremony/（所要時間など）、/works/（掲載許諾）、FAQ追加3問（耐久性・飾り方・シールでも九谷焼か）、用途別ページの直送・立札の文字・のし、/kutani/ の焼成・色付けの工程
 
 ### フェーズ1の続き
 - Shopify の独自ドメインが使えるようになったら：サイト内の mp1vnh-e3.myshopify.com へのリンクを、https://shop.kaishaneko.net に差し替える

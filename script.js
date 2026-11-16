@@ -122,7 +122,7 @@ window.addEventListener("resize", fitPcScaledSections);
 // Order / estimate links: change the URLs here only. Every link marked
 // data-order-link / data-estimate-link in index.html takes its href from these.
 const ORDER_URL = "https://mp1vnh-e3.myshopify.com";
-const ESTIMATE_URL = "mailto:hello@unprologue.jp?subject=" + encodeURIComponent("会社猫のお見積り・ご相談");
+const ESTIMATE_URL = "/contact/";
 document.querySelectorAll("[data-order-link]").forEach((a) => {
   a.href = ORDER_URL;
 });

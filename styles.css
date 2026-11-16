@@ -7264,3 +7264,42 @@ a.trust-pill:hover {
 .footer-links {
   flex-basis: 100%;
 }
+
+/* /contact/ */
+.contact-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+}
+
+.contact-items li {
+  display: grid;
+  grid-template-columns: 9em minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: #4f4b45;
+}
+
+.contact-items li:last-child {
+  border-bottom: 0;
+}
+
+.contact-items b {
+  font-weight: 500;
+  color: #24211d;
+}
+
+@media (max-width: 767px) {
+  .contact-items li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+}
