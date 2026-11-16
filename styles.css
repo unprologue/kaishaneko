@@ -6578,3 +6578,30 @@ a.trust-pill:hover {
 .order-more .sec-more a {
   margin: 0 0.15em;
 }
+
+/* /faq/ grouped questions */
+.faq-group {
+  display: grid;
+  gap: 16px;
+}
+
+.faq-group + .faq-group {
+  margin-top: clamp(24px, 4vw, 40px);
+}
+
+.faq-group-title {
+  margin: 0;
+  font-family: var(--font-serif-jp);
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #24211d;
+  padding-left: 12px;
+  border-left: 3px solid #b0473f;
+}
+
+.faq-lead {
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
