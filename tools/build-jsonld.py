@@ -1,7 +1,11 @@
-"""Regenerate the JSON-LD (WebSite / Organization / Product graph + FAQPage) in index.html from the page itself.
+"""Regenerate the JSON-LD in index.html and faq/index.html from the pages themselves.
 
-FAQ entries come from the <details class="faq-item"> blocks. Answers that still contain
-a "[...]" placeholder are left out so unconfirmed text never reaches search results.
+index.html : WebSite / Organization / Product graph + FAQPage (the questions shown on the top page)
+faq/index.html : FAQPage (all questions shown on /faq/)
+
+FAQ entries come from the <details class="faq-item"> blocks, so the markup always matches what
+is displayed. Answers that still contain a "[...]" placeholder are left out so unconfirmed text
+never reaches search results.
 Run after editing the FAQ or prices: python3 tools/build-jsonld.py
 """
 import html
@@ -11,6 +15,7 @@ import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PATH = os.path.join(ROOT, "index.html")
+FAQ_PATH = os.path.join(ROOT, "faq", "index.html")
 START, END = "<!-- jsonld:start -->", "<!-- jsonld:end -->"
 
 
@@ -19,16 +24,31 @@ def text(fragment):
     return re.sub(r"\s+", " ", html.unescape(t)).strip()
 
 
-page = open(PATH, encoding="utf-8").read()
+def faq_entries(src):
+    out = []
+    for q, a in re.findall(r'<details class="faq-item"[^>]*>\s*<summary[^>]*>(.*?)<span class="faq-icon".*?<div class="faq-answer">(.*?)</div>', src, re.S):
+        q, a = text(q), text(a)
+        q = re.sub(r"^Q\.\s*", "", q)
+        a = re.sub(r"^A\.\s*", "", a)
+        if re.search(r"\[[^\]]+\]", a):  # unfilled placeholder
+            continue
+        out.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}})
+    return out
 
-faq = []
-for q, a in re.findall(r'<details class="faq-item"[^>]*>\s*<summary[^>]*>(.*?)<span class="faq-icon".*?<div class="faq-answer">(.*?)</div>', page, re.S):
-    q, a = text(q), text(a)
-    q = re.sub(r"^Q\.\s*", "", q)
-    a = re.sub(r"^A\.\s*", "", a)
-    if re.search(r"\[[^\]]+\]", a):  # unfilled placeholder
-        continue
-    faq.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}})
+
+def write_block(path, src, objects):
+    block = (START + "\n"
+             + "".join('    <script type="application/ld+json">\n' + json.dumps(o, ensure_ascii=False, indent=2) + "\n    </script>\n" for o in objects)
+             + "    " + END)
+    if START in src:
+        src = re.sub(re.escape(START) + r".*?" + re.escape(END), lambda m: block, src, flags=re.S)
+    else:
+        src = src.replace("  </head>", "    " + block + "\n  </head>", 1)
+    open(path, "w", encoding="utf-8").write(src)
+
+
+page = open(PATH, encoding="utf-8").read()
+faq = faq_entries(page)
 
 prices = re.findall(r'<tr><th scope="row">(XS|S|M|L)</th><td>(\d+)cm</td><td class="num">([\d,]+)円</td>', page)
 SITE = "https://kaishaneko.net/"
@@ -102,13 +122,9 @@ graph = {
 }
 faq_page = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq}
 
-block = (START + "\n"
-         + '    <script type="application/ld+json">\n' + json.dumps(graph, ensure_ascii=False, indent=2) + "\n    </script>\n"
-         + '    <script type="application/ld+json">\n' + json.dumps(faq_page, ensure_ascii=False, indent=2) + "\n    </script>\n"
-         + "    " + END)
-if START in page:
-    page = re.sub(re.escape(START) + r".*?" + re.escape(END), lambda m: block, page, flags=re.S)
-else:
-    page = page.replace("  </head>", "    " + block + "\n  </head>", 1)
-open(PATH, "w", encoding="utf-8").write(page)
-print(f"Product offers: {len(graph['@graph'][3]['offers'])}, FAQ entries: {len(faq)}")
+write_block(PATH, page, [graph, faq_page])
+
+faq_src = open(FAQ_PATH, encoding="utf-8").read()
+faq_all = faq_entries(faq_src)
+write_block(FAQ_PATH, faq_src, [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq_all}])
+print(f"Product offers: {len(graph['@graph'][3]['offers'])}, FAQ entries: top {len(faq)}, /faq/ {len(faq_all)}")
