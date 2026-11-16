@@ -6557,3 +6557,24 @@ a.trust-pill:hover {
     width: 100%;
   }
 }
+
+/* /order/ 料金・ご注文の流れ */
+.order-jump {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  font-size: 14px;
+}
+
+.order-jump a {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.order-more .sec-more a {
+  margin: 0 0.15em;
+}
