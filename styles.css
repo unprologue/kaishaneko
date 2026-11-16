@@ -7192,3 +7192,50 @@ a.trust-pill:hover {
     gap: 6px;
   }
 }
+
+.faq-answer .faq-link {
+  display: inline-block;
+  margin-top: 6px;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.guide-more {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.guide-more a {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.guide-main #finish {
+  padding-top: clamp(32px, 5vw, 56px);
+}
+
+/* /logo-guide/ on phones: one step per row, readable text */
+@media (max-width: 767px) {
+  .guide-main .guide-step-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .guide-main .guide-step h4 {
+    font-size: 1.05rem;
+  }
+
+  .guide-main .guide-step p {
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+
+  .guide-main .guide-step-num {
+    font-size: 1.2rem;
+  }
+}
