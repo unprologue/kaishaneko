@@ -50,7 +50,9 @@ def write_block(path, src, objects):
 page = open(PATH, encoding="utf-8").read()
 faq = faq_entries(page)
 
-prices = re.findall(r'<tr><th scope="row">(XS|S|M|L)</th><td>(\d+)cm</td><td class="num">([\d,]+)円</td>', page)
+# prices shown on the top page in 「選べる4サイズ」 (the full table lives on /order/)
+prices = re.findall(r'<p class="size-name">(XS|S|M|L)<span><span class="size-label">高さ</span>(\d+)cm</span></p>\s*<p class="size-price"><a[^>]*><span class="nowrap">([\d,]+)円</span>', page)
+assert len(prices) == 4, prices
 SITE = "https://kaishaneko.net/"
 # Offer url points at the order page, which shows the same price table (docs/site-plan.md 10章)
 OFFER_URL = SITE + "order/"
